@@ -17,9 +17,7 @@
     die;
   }
 
-  if ($_sec_user_included_ != '#sec_user_Included#') {
-    $_sec_user_included_ = '#sec_user_Included#';
-    $user_infos = array ();
+      $user_infos = array ();
 
     function user_delete_unwanted () {
       db_delete ('user', '(`authorized`=0) AND (`timestamp`<='.
@@ -436,5 +434,4 @@
       return config_get ('document-root').'/login/viewuser/?id='.
         $id.'&redirect='.get_redirection ();
     }
-  }
 ?>

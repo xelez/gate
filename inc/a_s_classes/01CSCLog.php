@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CSCLog_included_ != '#CSCLog_Included#') {
-    $_CSCLog_included_ = '#CSCLog_Included#';
 
     class CSCLog extends CSCVirtual {
       var $sName;
@@ -200,5 +198,4 @@
     }
 
     content_Register_SCClass ('CSCLog', 'Бортовой журнал');
-  }
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_dbase_included_ != '#dbase_Included#') {
-    $_dbase_included_ = '#dbase_Included#';
 
     $db_resource      = 0;
     $db_connected     = false;
@@ -81,7 +79,7 @@
         print ('PHP not configured for using MySQL');
         exit ();
       }
-      
+
       $db_resource = mysql_connect (config_get ('db-host'),
                                     config_get ('db-user'),
                                     config_get ('db-password'));
@@ -280,7 +278,7 @@
 
       return true;
     }
-  
+
     function db_move_up ($table, $id, $clause = '',
                          $idfield = 'id', $orderfield = 'order') {
       $order = db_field_value ($table, $orderfield, "`$idfield`=$id");
@@ -304,7 +302,7 @@
       }
 
       return db_swap_values ($table, $id, $prev, $orderfield, $idfield);
-    }  
+    }
 
     function db_move_down ($table, $id, $clause = '',
                            $idfield = 'id', $orderfield = 'order') {
@@ -362,5 +360,4 @@
     function db_string ($s) {
       return '"'.addslashes ($s).'"';
     }
-  }
 ?>

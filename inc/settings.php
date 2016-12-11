@@ -17,9 +17,7 @@
     die;
   }
 
-  if ($_manage_config_included_ != '#manage_config_Included#') {
-    $_manage_config_included_ = '#manage_config_Included#';
-    $manage_config_classes = array ();
+      $manage_config_classes = array ();
 
     /////////////////////
     // Setting classes
@@ -242,7 +240,7 @@
         return true;
       }
     }
-  
+
     function manage_settings_create_received () {
       if (manage_settings_create (stripslashes ($_POST['name']),
                                   stripslashes ($_POST['section']),
@@ -271,7 +269,7 @@
     function manage_settings_get_section_element ($id) {
       return db_row (db_query ('SELECT * FROM `settings` WHERE `id`='.$id));
     }
-  
+
     function manage_settings_update_name ($id) {
       global $_POST;
 
@@ -285,7 +283,7 @@
       db_update ('settings', array ('name' => "\"$name\"",
                                     'section' => "\"$section\""), '`id`='.$id);
     }
-  
+
     function manage_setting_id_by_ident ($ident) {
       $id = db_field_value ('settings', 'id', "`ident`=\"$ident\"");
 
@@ -295,7 +293,7 @@
 
       return -1;
     }
-  
+
     function manage_settings_delete_by_ident ($ident) {
       manage_settings_delete (manage_setting_id_by_ident ($ident));
     }
@@ -354,7 +352,7 @@
                    '`id`='.$r['id']);
       }
     }
-  
+
     function manage_setting_print ($class, $id) {
       $t = new $class ();
       $t->Init ($id);
@@ -368,7 +366,7 @@
       $t->Init ($id);
       return $t->CheckScript ();
     }
-  
+
     function opt_get ($id) {
       $r = db_row_value ('settings', '`ident`="'.addslashes ($id).'"');
 
@@ -424,5 +422,4 @@
     manage_settings_class_register ('CSCSignedNumber', 'Число со знаком');
     manage_settings_class_register ('CSCEmail',        'Адрес электронной почты');
     manage_settings_class_register ('CSCPassword',     'Пароль');
-  }
 ?>

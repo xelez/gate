@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_builtin_included_ != '#builtin_Included#') {
-    $_builtin_included_ = '#builtin_Included#';
 
     $days = array ('Mon' => 'Понедельник',
                    'Tue' => 'Вторник',
@@ -400,5 +398,4 @@
     function crlf2br ($s) {
       return str_replace ("\n", '<br>', str_replace ("\r\n", '<br>', $s));
     }
-  }
 ?>

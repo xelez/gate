@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_ipc_executor_included_ != '#ipc_executor_Included#') {
-    $_ipc_executor_included_ = '#ipc_executor_Included#';
 
     global $ipc, $XPFS;
 
@@ -39,5 +37,4 @@
 
     $XPFS = new XPFS ();
     $XPFS->createVolume ();
-  }
 ?>

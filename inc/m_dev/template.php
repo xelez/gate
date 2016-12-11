@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_manage_tpl_included_ != '#manage_tpl_Included#') {
-    $_manage_tpl_included_ = '#manage_tpl_Included#';
 
     global $manage_templates_arr;
     $manage_templates_arr = 0;
@@ -303,5 +301,4 @@
       $tpl = manage_template_by_name ($name);
       tpl_srcp ($tpl->GetText (), $args);
     }
-  }
 ?>

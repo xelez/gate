@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_wiki_included_ != '#wiki_Included#') {
-    $_wiki_included_ = '#wiki_Included#';
 
     function wiki_initialize () {
       if (config_get ('check-database')) {
@@ -142,7 +140,7 @@
                                                     ('0')) ));
         }
       }
-    
+
       $static_rules = config_get ('static-privacy-rules');
 
       if (user_access_root () ||
@@ -158,5 +156,4 @@
     }
 
     function wiki_admin_page () { global $wiki; return $wiki=='admin'; }
-  }
 ?>

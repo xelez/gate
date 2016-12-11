@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_stencil_messages_Included_ != '#stencil_messages_Included#') {
-    $_stencil_messages_Included_ = '#stencil_messages_Included#';
 
     function stencil_info ($txt) {
       if ($txt != '') {
@@ -35,5 +33,4 @@
     function info ($txt) {
       println (stencil_info ($txt));
     }
-  }
 ?>

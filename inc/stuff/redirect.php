@@ -17,9 +17,7 @@
     die;
   }
 
-  if ($_redirect_included_ != '#redirect_Included#') {
-    $_redirect_included_ = '#redirect_Included#';
-    $redirecting = false;
+      $redirecting = false;
     $redirector_skip_vars = array ();
     $redirector_empty_vars = array ();
 
@@ -114,11 +112,10 @@
       global $redirector_skip_vars;
       unset ($redirector_skip_vars[$name][$val]);
     }
-  
+
     redirector_add_skipvar ('action', 'save');
     redirector_add_skipvar ('action', 'create');
     redirector_add_skipvar ('action', 'delete');
     redirector_add_skipvar ('action', 'down');
     redirector_add_skipvar ('action', 'up');
-  }
 ?>

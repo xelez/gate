@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_files_included_ != '#files_Included#') {
-    $_files_included_ = '#files_Included#';
 
     $file_encrypted_allowed = array ();
     session_register ('file_encrypted_allowed');
@@ -171,7 +169,7 @@
   fseek (\$fp, __COMPILER_HALT_OFFSET__);
   print (stream_get_contents (\$fp));
   __halt_compiler();");
-  
+
       $f2 = fopen ($data['tmp_name'], 'rb');
 
       if ($f2) {
@@ -191,7 +189,7 @@
 
       return db_last_insert ();
     }
-  
+
     function files_get_encrypted_link ($id) {
       $d = db_row_value ('files', "`id`=$id");
 
@@ -232,5 +230,4 @@
     }
 
     hook_register ('CORE.Security.OnUserLogout', file_encrypted_on_user_logout);
-  }
 ?>

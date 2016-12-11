@@ -17,9 +17,7 @@
     die;
   }
 
-  if ($_ipc_included_ != '#ipc_Included#') {
-    $_ipc_included_ = '#ipc_Included#';
-    $ipc_functions = array ();
+      $ipc_functions = array ();
 
     function ipc_check_path_exists () {
       global $cpath;
@@ -98,5 +96,4 @@
         $ipc_functions[$func]['entry'] ();
       }
     }
-  }
 ?>

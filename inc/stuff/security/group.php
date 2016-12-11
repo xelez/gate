@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_sec_group_included_ != '#sec_group_Included#') {
-    $_sec_group_included_ = '#sec_group_Included#';
 
     function group_create ($name, $default = false) {
       $name = htmlspecialchars (trim ($name));
@@ -80,5 +78,4 @@
       return arr_from_query ('SELECT * FROM `group` '.
                              'WHERE `default`=1 ORDER BY `name`');
     }
-  }
 ?>

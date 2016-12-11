@@ -17,10 +17,8 @@
     die;
   }
 
-  if ($_hook_included_ != '#hook_Included#') {
-    $_hook_included_ = '#hook_Included#';
-    $hooks = array ();
-  
+      $hooks = array ();
+
     function hook_register ($callback, $handler) {
       global $hooks;
       $hooks[$callback][] = $handler;
@@ -49,5 +47,4 @@
     }
 
     hook_linkage ();
-  }
 ?>

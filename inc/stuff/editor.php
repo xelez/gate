@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_editor_included_ != '#editor_Included#') {
-    $_editor_included_ = '#editor_Included#';
 
     $editor_menus     = array ();
     $editor_functions = array ();
@@ -98,5 +96,4 @@
 
       $editor_menus[$name]->Draw ();
     }
-  }
 ?>

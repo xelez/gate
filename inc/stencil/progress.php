@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_stencil_progress_Included_ != '#stencil_progress_Included#') {
-    $_stencil_progress_Included_ = '#stencil_progress_Included#';
 
     function stencil_progress ($settings = '') {
       $s = unserialize_params ($settings);
@@ -45,5 +43,4 @@
     function progress ($settings = '') {
       println (stencil_prorgess ($settings));
     }
-  }
 ?>

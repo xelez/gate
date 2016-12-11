@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_stuff_Included_ != '#stuff_Included#') {
-    $_stuff_Included_ = '#stuff_Included#';
 
     include $DOCUMENT_ROOT.'/inc/stuff/dbase.php';
     include $DOCUMENT_ROOT.'/inc/stuff/debug.php';
@@ -36,5 +34,4 @@
     include $DOCUMENT_ROOT.'/inc/stuff/handler.php';
     include $DOCUMENT_ROOT.'/inc/stuff/db_pack.php';
     include $DOCUMENT_ROOT.'/inc/stuff/sock.php';
-  }
 ?>

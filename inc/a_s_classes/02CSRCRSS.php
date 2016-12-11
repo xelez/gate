@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CSCRSS_included_ != '#CSCRSS_Included#') {
-    $_CSCRSS_included_ = '#CSCRSS_Included#';
 
     class CSCRSS extends CSCVirtual {
       var $sName;
@@ -332,5 +330,4 @@
     }
 
     content_Register_SCClass ('CSCRSS', 'RSS Feed');
-  }
 ?>

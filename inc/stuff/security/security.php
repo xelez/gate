@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_sec_included_ != '#sec_Included#') {
-    $_sec_included_ = '#sec_Included#';
 
     define ('ACCESS_GUEST', 0);
     define ('ACCESS_USER',  1);
@@ -244,7 +242,7 @@
       $c->Init ($data);
       return $c;
     }
-  
+
     function security_groups () {
       return array (
         array ('title'=>'Гость', 'access'=>'0', 'desc'=>'Гость, которому запрещено внесение любых изменений в структуру и содеожимое сайта.'),
@@ -284,5 +282,4 @@
 
       return '<Неизвестно>';
     }
-  }
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_stencil_Included_ != '#stencil_Included#') {
-    $_stencil_Included_ = '#stencil_Included#';
 
     include $DOCUMENT_ROOT.'/inc/stencil/anchor.php';
     include $DOCUMENT_ROOT.'/inc/stencil/core_page.php';
@@ -35,5 +33,4 @@
     include $DOCUMENT_ROOT.'/inc/stencil/pagintation.php';
     include $DOCUMENT_ROOT.'/inc/stencil/progress.php';
 
-  }
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_stencil_pages_Included_ != '#stencil_pages_Included#') {
-    $_stencil_pages_Included_ = '#stencil_pages_Included#';
 
     function stencil_on_construction () {
       return tpl ('back/on_construction');
@@ -27,5 +25,4 @@
     function on_construction () {
       println (stencil_on_construction ());
     }
-  }
 ?>

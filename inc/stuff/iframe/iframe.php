@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_IFrame_included_ != '#IFrame_Included#') {
-    $_IFrame_included_ = '#IFrame_Included#';
 
     include 'helpers.php';
 
@@ -164,5 +162,4 @@
     function iframe_destroy_content ($val) {
       iframe_reaccept_content ($val, '');
     }
-  }
 ?>
