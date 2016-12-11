@@ -10,11 +10,6 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print ('HACKERS?');
-    die;
-  }
-
   formo ('title=Список существующих типов данных;');
   $i = 1;
   $n = db_affected ();

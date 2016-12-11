@@ -8,10 +8,7 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print 'HACKERS?';
-    die;
-  }
+
 
   include 'menu.php';
 

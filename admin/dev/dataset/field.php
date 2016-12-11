@@ -10,11 +10,6 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print ('HACKERS?');
-    die;
-  }
-
   global $id, $viewelement;
   formo ('title=Поле набора данных;');
 

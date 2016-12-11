@@ -10,11 +10,6 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print ('HACKERS?');
-    die;
-  }
-
   global $id;
   $d = group_get_by_id ($id);
   formo ('title=Информация о группе пользователей;');

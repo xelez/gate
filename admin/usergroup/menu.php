@@ -10,11 +10,6 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF!='') {
-    print ('HACKERS?');
-    die;
-  }
-
   // Creating the developers' specified navigate menu
   $usergroup_menu=new CVCMenu ();
   $usergroup_menu->Init ('andevMenu', 'type=hor;colorized=true;sublevel=1;border=thin;');

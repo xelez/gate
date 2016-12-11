@@ -1,4 +1,4 @@
-<?php if ($PHP_SELF!='') {print 'HACKERS?'; die;} 
+<?php
 global $self, $wiki, $action, $history, $id, $oldid;
 $content=content_lookup (dirname ($self));
 $subnav='';

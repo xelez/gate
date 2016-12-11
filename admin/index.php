@@ -13,5 +13,5 @@
   include '../globals.php';
   require_once $DOCUMENT_ROOT.'/inc/include.php';
 
-  Main (dirname ($PHP_SELF), false);
+  Main (dirname ($_SERVER['PHP_SELF']), false);
 ?>

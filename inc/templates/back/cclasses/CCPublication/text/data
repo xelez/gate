@@ -10,10 +10,7 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print 'HACKERS?';
-    die;
-  }
+
 
   global $self, $uid, $oldid, $pIFACE;
   $content = content_lookup (dirname (dirname ($self)));

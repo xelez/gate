@@ -10,11 +10,6 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print ('HACKERS?');
-    die;
-  }
-
   dd_formo ('title=Создать новое хранилище данных;');
 ?>
 <script language="JavaScript" type="text/javascript">

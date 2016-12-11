@@ -10,11 +10,6 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print ('HACKERS?');
-    die;
-  }
-
   global $id;
   dd_formo ('title=Добавить поле в набор данных;');
 ?>

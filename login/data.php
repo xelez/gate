@@ -10,7 +10,7 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF!='') {
+  if ($_SERVER['PHP_SELF']!='') {
     print 'HACKERS?';
     die;
   }

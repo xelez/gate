@@ -11,11 +11,6 @@
    */
 
 
-  if ($PHP_SELF != '') {
-    print ('HACKERS?');
-    die;
-  }
-
   global $id;
   $c = wiki_spawn_content ($id);
   print ('<div id="snavigator"><a href=".">Разделы</a>'.

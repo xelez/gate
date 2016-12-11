@@ -10,11 +10,6 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print ('HACKERS?');
-    die;
-  }
-
   global $section;
   $sectionMenu = new CVCMenu ();
   $sectionMenu->Init ('sectionMenu', 'type=hor;colorized=true;sublevel=1;border=thin;');

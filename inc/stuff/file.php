@@ -156,7 +156,7 @@
   session_start ();
   db_connect ();
   security_initialize ();
-  \$fn=filename (\$PHP_SELF);
+  \$fn=filename (\$_SERVER['PHP_SELF']);
   \$d=db_row_value ('files', '`name`=\"'.\$fn.'\"');
   if (\$d['id']=='') _die ();
   if (\$d['access']>user_access ()) _die ('Access denied');

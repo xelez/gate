@@ -10,11 +10,6 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print ('HACKERS?');
-    die;
-  }
-
   global $id;
   $t = manage_spawn_template ($id);
   formo ('title=Информация о шаблоне;');

@@ -10,10 +10,7 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print 'HACKERS?';
-    die;
-  }
+
 
   /* Creating the developers' specified navigate menu */
   $datacontrol_menu = new CVCMenu ();

@@ -10,10 +10,7 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print 'HACKERS?';
-    die;
-  }
+
 
   print (content_error_page (403));
 ?>

@@ -1,4 +1,4 @@
-<?php if ($PHP_SELF!='') {print 'HACKERS?'; die;} 
+<?php
 global $self, $wiki, $action, $id;
 $content=content_lookup (dirname (dirname ($self)));
 $pIFACE=$content->GetData ();

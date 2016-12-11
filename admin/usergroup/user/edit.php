@@ -8,11 +8,6 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF!='') {
-    print ('HACKERS?');
-    die;
-  }
-
   global $id, $page;
   formo ('title=Редактирование пользователя;');
 

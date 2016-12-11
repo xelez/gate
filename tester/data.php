@@ -10,10 +10,7 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print 'HACKERS?';
-    die;
-  }
+
 
   if (!user_authorized ()) {
     redirect ('./login?redirect='.get_redirection ());

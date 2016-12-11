@@ -10,11 +10,6 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print ('HACKERS?');
-    die;
-  }
-
   global $id, $section;
   $d = manage_settings_get_section_element ($id);
   formo ('title=Информация о настройке;');

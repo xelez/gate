@@ -10,11 +10,6 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF!='') {
-    print 'HACKERS?';
-    die;
-  }
-
   if (!user_authorized ()) {
     include 'inc/login.php';
   } else if (user_access_root ()) {

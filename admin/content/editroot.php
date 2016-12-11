@@ -10,11 +10,6 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF!='') {
-    print ('HACKERS?');
-    die;
-  }
-
   $id = 1;
   formo ('title=Редактирование корневого раздела;');
   $c = wiki_spawn_content ($id);

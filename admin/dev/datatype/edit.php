@@ -10,11 +10,6 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print ('HACKERS?');
-    die;
-  }
-
   global $id;
   $d = manage_spawn_datatype ($id);
   formo ('title=Информация о типе данных;');

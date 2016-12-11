@@ -10,12 +10,6 @@
    * See the file COPYING.
    */
 
-
-  if ($PHP_SELF != '') {
-    print 'HACKERS?';
-    die;
-  }
-
   if (!user_authorized () || !user_access_root ()) {
     header ('Location: '.config_get ('document-root').'/admin');
   }

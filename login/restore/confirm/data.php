@@ -10,10 +10,7 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print 'HACKERS?';
-    die;
-  }
+
 ?>
 <div id="navigator"><a href="<?=config_get ('document-root')?>/login">Вход в систему</a>Восстановление пароля</div>
 ${information}

@@ -10,11 +10,6 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print ('HACKERS?');
-    die;
-  }
-
   global $section;
   $items = manage_settings_get_section_elements ($section);
   $update_forms = array ();

@@ -10,10 +10,7 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print 'HACKERS?';
-    die;
-  }
+
 
   global $DOCUMENT_ROOT;
   $manage_menu = new CVCMenu ();

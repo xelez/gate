@@ -31,5 +31,5 @@
   }
 
   require_once $DOCUMENT_ROOT.'/inc/logick/tester/include.php';
-  Main (dirname ($PHP_SELF), true);
+  Main (dirname ($_SERVER['PHP_SELF']), true);
 ?>

@@ -10,11 +10,6 @@
    * See the file COPYING.
    */
 
-  if ($PHP_SELF != '') {
-    print ('HACKERS?');
-    die;
-  }
-
   dd_formo ('title=Создать новый тип данных;');
 ?>
 <script language="JavaScript" type="text/javascript">
