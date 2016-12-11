@@ -12,31 +12,27 @@
 
   global $IFACE;
 
-  if ($IFACE != "SPAWNING NEW IFACE" || $_GET['IFACE'] != '') {
+  if ($IFACE != "SPAWNING NEW IFACE") {
     print ('HACKERS?');
     die;
   }
 
-  if ($_all_included_ != '#all_Included#') {
-    $_all_included_ = '#all_Included#'; 
-
-    include $DOCUMENT_ROOT.'/inc/stuff/parsers.php';
-    include $DOCUMENT_ROOT.'/inc/config.php';
-    include $DOCUMENT_ROOT.'/inc/common/config.php';
-    include $DOCUMENT_ROOT.'/inc/content.php';
-    include $DOCUMENT_ROOT.'/inc/common/CVirtual.php';
-    include $DOCUMENT_ROOT.'/inc/service.php';
-    include $DOCUMENT_ROOT.'/inc/logick/wiki/include.php';
-    include $DOCUMENT_ROOT.'/inc/stuff/include.php';
-    include $DOCUMENT_ROOT.'/inc/stuff/security/include.php';
-    include $DOCUMENT_ROOT.'/inc/stencil/include.php';
-    include $DOCUMENT_ROOT.'/inc/linkage.php';
-    include $DOCUMENT_ROOT.'/inc/settings.php';
-    include $DOCUMENT_ROOT.'/inc/dev.php';
-    include $DOCUMENT_ROOT.'/inc/builtin.php';
-    include $DOCUMENT_ROOT.'/inc/template.php'; 
-    include $DOCUMENT_ROOT.'/inc/stencil.php'; 
-    include $DOCUMENT_ROOT.'/inc/xpfs.php';
-    include $DOCUMENT_ROOT.'/inc/main.php';
-  }
+  require_once $DOCUMENT_ROOT.'/inc/stuff/parsers.php';
+  require_once $DOCUMENT_ROOT.'/inc/config.php';
+  require_once $DOCUMENT_ROOT.'/inc/common/config.php';
+  require_once $DOCUMENT_ROOT.'/inc/content.php';
+  require_once $DOCUMENT_ROOT.'/inc/common/CVirtual.php';
+  require_once $DOCUMENT_ROOT.'/inc/service.php';
+  require_once $DOCUMENT_ROOT.'/inc/logick/wiki/include.php';
+  require_once $DOCUMENT_ROOT.'/inc/stuff/include.php';
+  require_once $DOCUMENT_ROOT.'/inc/stuff/security/include.php';
+  require_once $DOCUMENT_ROOT.'/inc/stencil/include.php';
+  require_once $DOCUMENT_ROOT.'/inc/linkage.php';
+  require_once $DOCUMENT_ROOT.'/inc/settings.php';
+  require_once $DOCUMENT_ROOT.'/inc/dev.php';
+  require_once $DOCUMENT_ROOT.'/inc/builtin.php';
+  require_once $DOCUMENT_ROOT.'/inc/template.php';
+  require_once $DOCUMENT_ROOT.'/inc/stencil.php';
+  require_once $DOCUMENT_ROOT.'/inc/xpfs.php';
+  require_once $DOCUMENT_ROOT.'/inc/main.php';
 ?>
