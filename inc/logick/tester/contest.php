@@ -21,7 +21,7 @@
     $__WT_contest_included__ = '##WT_contents_Included##';
 
     global $gateway_content_container;
-    $gateway_content_container = nil;
+    $gateway_content_container = NULL;
 
     class CGContestContainer {
       var $data;
@@ -180,7 +180,7 @@
         $lid = db_field_value ('tester_contests', 'lid', "`id`=$id");
         $c = WT_spawn_new_library ($lid);
 
-        if ($c != nil) {
+        if ($c != NULL) {
           $c->PerformContestDeletion ($id);
         }
 
@@ -225,7 +225,7 @@
         $d = $this->ContestById ($id);
         $lib = WT_spawn_new_library ($d['lid']);
 
-        if ($lib == nil) {
+        if ($lib == NULL) {
           return true;
         }
 
@@ -316,7 +316,7 @@
     function WT_spawn_new_contest_container () {
       global $gateway_content_container;
 
-      if ($gateway_content_container != nil) {
+      if ($gateway_content_container != NULL) {
         return $gateway_content_container;
       }
 
@@ -328,7 +328,7 @@
       $contest = WT_contest_by_id ($id);
       $lib = WT_spawn_new_library ($contest['lid']);
 
-      if ($lib == nil) {
+      if ($lib == NULL) {
         return;
       }
 
@@ -339,7 +339,7 @@
       $contest = WT_contest_by_id ($id);
       $lib = WT_spawn_new_library ($contest['lid']);
 
-      if ($lib == nil) {
+      if ($lib == NULL) {
         return '';
       }
 

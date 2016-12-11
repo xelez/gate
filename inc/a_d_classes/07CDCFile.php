@@ -21,12 +21,12 @@
     $file_stuff_included = false;
 
     class CDCFile extends CDCVirtual {
-      var $storage = nil;
+      var $storage = NULL;
 
       function CDCFile () { $this->SetClassName ('CDCFile'); }
 
       function SpawnStorage () {
-        if ($this->storage != nil &&
+        if ($this->storage != NULL &&
             $this->storage->GetID () == $this->settings['storage']) {
           return;
         }

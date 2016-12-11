@@ -27,7 +27,7 @@
                'Page_Contest', ACCESS_GUEST),
       );
 
-    $WT_gateway=nil;
+    $WT_gateway=NULL;
 
     class CGateway extends CVirtual {
       var $main_menu;
@@ -333,7 +333,7 @@
         if ($this->current_contest['lid']!='') {
           $lib = WT_spawn_new_library ($this->current_contest['lid']);
 
-          if ($lib != nil) {
+          if ($lib != NULL) {
             $lib->InitIface ();
           }
         }
@@ -549,7 +549,7 @@
     function WT_spawn_new_gateway () {
       global $WT_gateway;
 
-      if ($WT_gateway != nil) {
+      if ($WT_gateway != NULL) {
         return $WT_gateway;
       }
 

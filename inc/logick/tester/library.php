@@ -21,7 +21,7 @@
     $_WT_library_included_ != '##WT_library_Included##';
 
     global $WT_library_container;
-    $WT_library_container = nil;
+    $WT_library_container = NULL;
     global $WT_libraries;
 
     class CGLibraryContainer {
@@ -40,7 +40,7 @@
     function WT_spawn_new_library_container () {
       global $WT_library_container;
 
-      if ($WT_library_container != nil) {
+      if ($WT_library_container != NULL) {
         return $WT_library_container;
       }
 
@@ -48,14 +48,14 @@
       return $WT_library_container;
     }
 
-    function WT_spawn_new_library ($lid, $gw = nil) {
+    function WT_spawn_new_library ($lid, $gw = NULL) {
       global $WT_libraries;
 
       if (isset ($WT_libraries[$lid])) {
         return $WT_libraries[$lid];
       }
 
-      if ($gw == nil) {
+      if ($gw == NULL) {
         $gw = WT_spawn_new_gateway ();
       }
 
@@ -72,7 +72,7 @@
         }
       }
 
-      return nil;
+      return NULL;
     }
 
     function WT_library_register ($class, $pseudo, $lid) {

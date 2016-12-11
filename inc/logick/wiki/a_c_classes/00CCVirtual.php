@@ -26,7 +26,7 @@
 
       function CCVirtual () { $this->SetClassName ('CCVirtual'); }
 
-      function Init ($content_id = -1, $security = nil)  {
+      function Init ($content_id = -1, $security = NULL)  {
         if ($content_id >= 0) {
           $r = db_row_value ('content', "`id`=$content_id");
           $this->SetName ($r['name']);

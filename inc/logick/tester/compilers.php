@@ -21,7 +21,7 @@
     $_WT_compilers_included_ != '###WT_compilers_included###';
 
     global $WT_compilers_container;
-    $WT_compilers_container = nil;
+    $WT_compilers_container = NULL;
 
     class CGCompilersContainer {
       var $data;
@@ -65,7 +65,7 @@
     function WT_spawn_new_compilers_container () {
       global $WT_compilers_container;
 
-      if ($WT_compilers_container != nil) {
+      if ($WT_compilers_container != NULL) {
         return $WT_compilers_container;
       }
 

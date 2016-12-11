@@ -25,12 +25,12 @@
              '(.*)\[\/url\]/si', 'replace'=>'<a href="\1">\2</a>')
     );
   
-    $wiki_menu_global_vars = nil;
+    $wiki_menu_global_vars = NULL;
 
     function wiki_menu_parse_item ($src, &$params) {
       global $wiki_menu_global_vars;
 
-      if ($wiki_menu_global_vars == nil) {
+      if ($wiki_menu_global_vars == NULL) {
         $wiki_menu_global_vars = array (
           'anon_redirect' => ((!user_authorized ())?('redirect='.
                                                      get_redirection ()):('')),

@@ -22,12 +22,12 @@
     $image_contentSettingsform_stuff_included = false;
 
     class CDCImage extends CDCVirtual {
-      var $storage = nil;
+      var $storage = NULL;
 
       function CDCImage () { $this->SetClassName ('CDCImage'); }
 
       function SpawnStorage () {
-        if ($this->storage != nil &&
+        if ($this->storage != NULL &&
             $this->storage->GetID () == $this->settings['storage']) {
           return;
         }

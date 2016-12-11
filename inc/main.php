@@ -20,7 +20,7 @@
     $contentPage = null;
 
     global $CORE, $XPFS;
-    $CORE = $XPFS = nil;
+    $CORE = $XPFS = NULL;
 
     class CCore {
       var $PAGE;
@@ -156,7 +156,7 @@
     function spawn_new_core ($url = '', $wiki = true) {
       global $CORE;
 
-      if ($CORE != nil) {
+      if ($CORE != NULL) {
         return $CORE;
       }
 

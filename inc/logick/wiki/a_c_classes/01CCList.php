@@ -28,7 +28,7 @@
 
       function CCList () { $this->setClassName ('CCList'); }
 
-      function Init ($content_id = -1, $security=nil) {
+      function Init ($content_id = -1, $security=NULL) {
         CCVirtual::Init ($content_id, $security);
         $this->ReceiveContent ();
       }

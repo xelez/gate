@@ -255,7 +255,7 @@
     function add_info ($txt) {
       global $CORE;
 
-      if ($CORE == nil) {
+      if ($CORE == NULL) {
         println ('<b>CORE info: </b>'.$txt);
         return;
       }

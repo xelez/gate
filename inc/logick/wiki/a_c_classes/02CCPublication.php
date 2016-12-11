@@ -35,7 +35,7 @@
         return manage_spawn_dataset ($this->settings['dataset']['id'],
                                      $this->settings['dataset']['settings']);
 
-        if ($this->empty_dataset == nil) {
+        if ($this->empty_dataset == NULL) {
           $this->empty_dataset = manage_spawn_dataset (
             $this->settings['dataset']['id'],
             $this->settings['dataset']['settings']);
@@ -60,7 +60,7 @@
         }
       }
 
-      function Init ($content_id = -1, $security = nil) {
+      function Init ($content_id = -1, $security = NULL) {
         global $action, $id;
         CCVirtual::Init ($content_id, $security);
 

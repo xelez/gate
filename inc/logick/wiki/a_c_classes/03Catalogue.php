@@ -30,7 +30,7 @@
 
       function CCCatalogue () { $this->SetClassName ('CCCatalogue'); }  
 
-      function Init ($content_id = -1, $security = nil) {
+      function Init ($content_id = -1, $security = NULL) {
         global $action, $id;
         CCVirtual::Init ($content_id, $security);
 
@@ -307,7 +307,7 @@
       }
 
       function AppendCatFromDataset ($name, $dataset) {
-        if ($dataset == nil) {
+        if ($dataset == NULL) {
           return false;
         }
 
@@ -373,7 +373,7 @@
       function AppendReceivedCat () {
         $dataset = manage_receive_dataset_from_selector ();
 
-        if ($dataset == nil) {
+        if ($dataset == NULL) {
           return false;
         }
 

@@ -22,7 +22,7 @@
 
     global $INFORMATICS_problemsContainer;
     global $INFORMATICS_ProblemSettingsFields;
-    $INFORMATICS_problemsContainer = nil;
+    $INFORMATICS_problemsContainer = NULL;
 
     $INFORMATICS_ProblemSettingsFields = array (
       array ('name' => 'name', 'type' => 'TEXT', 'postname' => 'name',
@@ -2114,7 +2114,7 @@
 
     function INFORMATICS_SpawnNewProblemsContainer ($lib) {
       global $INFORMATICS_problemsContainer;
-      if ($INFORMATICS_problemsContainer == nil) {
+      if ($INFORMATICS_problemsContainer == NULL) {
         $INFORMATICS_problemsContainer = new CGMInformaticsProblemsContainer ($lib);
         $INFORMATICS_problemsContainer->Init ();
       }

@@ -78,7 +78,7 @@
   function DrawAllItems () {
     $filter = $_GET['filter'];
 
-    $cnt = INFORMATICS_SpawnNewProblemsContainer (nil);
+    $cnt = INFORMATICS_SpawnNewProblemsContainer (NULL);
     $list = $cnt->GetList (stripslashes ($filter));
     $n = count ($list);
 

@@ -20,7 +20,7 @@
 
     global $manage_templates_arr;
     $manage_templates_arr = 0;
-    $manage_template_cache = nil;
+    $manage_template_cache = NULL;
 
     class CTemplate extends CVirtual {
       var $id, $name, $text, $refcount;
@@ -144,7 +144,7 @@
       global $manage_template_cache;
 
       // Fill da cache
-      if ($manage_template_cache == nil) {
+      if ($manage_template_cache == NULL) {
         $manage_template_cache = array ();
         $q = db_select ('templates', array ('id', 'name'));
         while ($r = db_row ($q)) {
@@ -220,7 +220,7 @@
       global $manage_template_cache;
       $id = -1;
 
-      if ($manage_template_cache != nil) {
+      if ($manage_template_cache != NULL) {
         foreach ($manage_template_cache as $_id=>$data) {
           if ($data['name'] == $name) {
             $id = $_id;
