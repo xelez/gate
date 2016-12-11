@@ -17,9 +17,6 @@
     die;
   }
 
-  if ($_service_Included_ != '#_service_Included') {
-    $_service_Included_ = '#_service_Included';
-
     $services = array ();
     $services_link = array ();
 
@@ -240,5 +237,4 @@
     function manage_service_get_list () {
       return arr_from_query ('SELECT * FROM `service` ORDER BY `name`');
     }
-  }
 ?>

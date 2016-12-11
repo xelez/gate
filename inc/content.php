@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_content_included_ != '#content_Included#') {
-    $_content_included_ = '#content_Included#'; 
     $content_RegisteredClasses = array ();
     $content_url_vars = array ();
     $content_type = '';
@@ -244,5 +242,4 @@
     function content_unavaliable () {
       add_info ('Этот раздел в данное время Вам недоступен.');
     }
-  }
 ?>

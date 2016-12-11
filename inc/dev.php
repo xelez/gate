@@ -17,9 +17,6 @@
     die;
   }
 
-  if ($_manage_dev_included_ != '#manage_dev_Included#') {
-    $_manage_dev_included_ = '#manage_dev_Included#'; 
-
     include $DOCUMENT_ROOT.'/inc/m_dev/include.php';
 
     function manage_check_tables () {
@@ -90,5 +87,4 @@
         manage_check_tables ();
       }
     }
-  }
 ?>

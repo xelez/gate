@@ -17,9 +17,6 @@
     die;
   }
 
-  if ($_template_included_ != '#template_Included#') {
-    $_template_included_ = '#template_Included#'; 
-
     $tpl_args = array ();
     $tpl_namespace_depth = -1;
     $tpl_stack = array ('count' => 0, 'data' => array ());
@@ -184,5 +181,4 @@
         tplp ($relative.'/'.$arr[$i], $vars);
       }
     }
-  }
 ?>

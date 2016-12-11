@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_main_included_ != '#main_Included#') {
-    $_main_included_ = '#main_Included#'; 
     $contentPage = null;
 
     global $CORE, $XPFS;
@@ -172,5 +170,4 @@
       $CORE->ReturnContents ();
       $CORE->DrawCOntents ();
     }
-  }
 ?>

@@ -17,9 +17,6 @@
     die;
   }
 
-  if ($_xpfs_included_ != '#xpfs_Included#') {
-    $_xpfs_included_ = '#xpfs_Included#'; 
-
     global $XPFS_DEFAULT_VOLUME;
     $XPFS_DEFAULT_VOLUME = 'xpfs';
 
@@ -527,5 +524,4 @@
                    array ('mtime' => time ()), '`id`='.$node['id']);
       }
     }
-  }
 ?>

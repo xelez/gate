@@ -17,9 +17,6 @@
     die;
   }
 
-  if ($_stencil_included_ != '#stencil_Included#') {
-    $_stencil_included_='#stencil_Included#'; 
-
     function stencil_set ($k, $v) {
       global $stencil_vars;
       $stencil_vars[$k] = $v;
@@ -39,5 +36,4 @@
       }
       tplp ('stencil/'.stencil_get ('stencil_template'), array ('body'=>$stencil_body));
     }
-  }
 ?>
