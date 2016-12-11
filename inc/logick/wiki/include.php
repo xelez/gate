@@ -17,8 +17,8 @@
     die;
   }
 
-      include $DOCUMENT_ROOT.'/inc/logick/wiki/linkage.php';
-    include $DOCUMENT_ROOT.'/inc/logick/wiki/content.php';
-    include $DOCUMENT_ROOT.'/inc/logick/wiki/wiki.php';
-    include $DOCUMENT_ROOT.'/inc/logick/wiki/menu.php';
+      require_once $DOCUMENT_ROOT.'/inc/logick/wiki/linkage.php';
+    require_once $DOCUMENT_ROOT.'/inc/logick/wiki/content.php';
+    require_once $DOCUMENT_ROOT.'/inc/logick/wiki/wiki.php';
+    require_once $DOCUMENT_ROOT.'/inc/logick/wiki/menu.php';
 ?>

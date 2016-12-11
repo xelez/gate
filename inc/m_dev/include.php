@@ -18,9 +18,9 @@
   }
 
 
-    include $DOCUMENT_ROOT.'/inc/m_dev/dataset.php';
-    include $DOCUMENT_ROOT.'/inc/m_dev/datatype.php';
-    include $DOCUMENT_ROOT.'/inc/m_dev/field.php';
-    include $DOCUMENT_ROOT.'/inc/m_dev/storage.php';
-    include $DOCUMENT_ROOT.'/inc/m_dev/template.php';
+    require_once $DOCUMENT_ROOT.'/inc/m_dev/dataset.php';
+    require_once $DOCUMENT_ROOT.'/inc/m_dev/datatype.php';
+    require_once $DOCUMENT_ROOT.'/inc/m_dev/field.php';
+    require_once $DOCUMENT_ROOT.'/inc/m_dev/storage.php';
+    require_once $DOCUMENT_ROOT.'/inc/m_dev/template.php';
 ?>

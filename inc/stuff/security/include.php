@@ -18,7 +18,7 @@
   }
 
 
-    include $DOCUMENT_ROOT.'/inc/stuff/security/group.php';
-    include $DOCUMENT_ROOT.'/inc/stuff/security/security.php';
-    include $DOCUMENT_ROOT.'/inc/stuff/security/user.php';
+    require_once $DOCUMENT_ROOT.'/inc/stuff/security/group.php';
+    require_once $DOCUMENT_ROOT.'/inc/stuff/security/security.php';
+    require_once $DOCUMENT_ROOT.'/inc/stuff/security/user.php';
 ?>

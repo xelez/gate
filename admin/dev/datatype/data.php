@@ -20,7 +20,7 @@
   }
 
   global $DOCUMENT_ROOT, $CORE, $action, $id;
-  include $DOCUMENT_ROOT.'/admin/inc/menu.php';
+  require_once $DOCUMENT_ROOT.'/admin/inc/menu.php';
   include '../menu.php';
 
   $CORE->AddScriptFile ('man_dtypes.js');

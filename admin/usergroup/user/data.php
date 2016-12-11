@@ -20,7 +20,7 @@
   }
 
   global $DOCUMENT_ROOT, $action, $id;
-  include $DOCUMENT_ROOT.'/admin/inc/menu.php';
+  require_once $DOCUMENT_ROOT.'/admin/inc/menu.php';
 
   include '../menu.php';
   $manage_menu->SetActive ('usergroup');

@@ -21,8 +21,8 @@
   }
 
   global $DOCUMENT_ROOT;
-  include $DOCUMENT_ROOT.'/inc/xpfs_browser.php';
-  include $DOCUMENT_ROOT.'/admin/inc/menu.php';
+  require_once $DOCUMENT_ROOT.'/inc/xpfs_browser.php';
+  require_once $DOCUMENT_ROOT.'/admin/inc/menu.php';
   include '../menu.php';
 
   $manage_menu->SetActive ('to-developer');

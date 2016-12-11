@@ -18,6 +18,8 @@
   }
 
 
+  /* WTF THIS FILE IS NEVER INCLUDED, because this class was already on 01CMeta
+
     class CMMeta extends CMHeadTag {
 
       function CMMeta () { $this->SetClassName ('CMMeta'); }
@@ -31,5 +33,5 @@
       function SetDefaultSettings () {$this->SetClassName ('CMMeta');}
     }
 
-    content_Register_MCClass ('CMMeta');
+    content_Register_MCClass ('CMMeta'); */
 ?>

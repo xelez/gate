@@ -17,7 +17,7 @@
     die;
   }
 
-    include $DOCUMENT_ROOT.'/inc/m_dev/include.php';
+    require_once $DOCUMENT_ROOT.'/inc/m_dev/include.php';
 
     function manage_check_tables () {
         db_create_table_safe ('datatypes', array (

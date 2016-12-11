@@ -11,7 +11,7 @@
    */
 
   include 'globals.php';
-  include $DOCUMENT_ROOT.'/inc/include.php';
+  require_once $DOCUMENT_ROOT.'/inc/include.php';
 
   db_connect (config_get ('check-database'));
   content_initialize ();

@@ -20,7 +20,7 @@
   }
 
   global $DOCUMENT_ROOT, $action, $id;
-  include $DOCUMENT_ROOT.'/admin/inc/menu.php';
+  require_once $DOCUMENT_ROOT.'/admin/inc/menu.php';
 
   $printSection = true;
   $manage_menu->SetActive ('settings');

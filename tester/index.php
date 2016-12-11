@@ -20,16 +20,16 @@
     $n = count ($serv_ipc_procs);
     if (strpos ($serv_ipc_procs, $ipc) > 0) {
       /* Execute IPC command */
-      include $DOCUMENT_ROOT.'/inc/stuff/ipc_executor.php';
-      include $DOCUMENT_ROOT.'/inc/logick/tester/config/config.php';
-      include $DOCUMENT_ROOT.'/inc/logick/tester/config/ipc.php';
-      include $DOCUMENT_ROOT.'/inc/logick/tester/ipc.php';
-      include $DOCUMENT_ROOT.'/inc/stuff/db_pack.php';
+      require_once $DOCUMENT_ROOT.'/inc/stuff/ipc_executor.php';
+      require_once $DOCUMENT_ROOT.'/inc/logick/tester/config/config.php';
+      require_once $DOCUMENT_ROOT.'/inc/logick/tester/config/ipc.php';
+      require_once $DOCUMENT_ROOT.'/inc/logick/tester/ipc.php';
+      require_once $DOCUMENT_ROOT.'/inc/stuff/db_pack.php';
       ipc_exec ($ipc);
       die;
     }
   }
 
-  include $DOCUMENT_ROOT.'/inc/logick/tester/include.php';
+  require_once $DOCUMENT_ROOT.'/inc/logick/tester/include.php';
   Main (dirname ($PHP_SELF), true);
 ?>

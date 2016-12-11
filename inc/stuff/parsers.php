@@ -20,7 +20,7 @@
   if ($_parsers_included_ != '#_parsers_Included_#') {
     $_parsers_included_ = '#_parsers_Included_#';
 
-    include $DOCUMENT_ROOT.'/inc/stuff/fakecode.php';
+    require_once $DOCUMENT_ROOT.'/inc/stuff/fakecode.php';
 
     $VARS = null;  
 

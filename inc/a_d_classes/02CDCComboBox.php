@@ -25,7 +25,7 @@
 ?>
       Варианты. Каждая строка - новый вариант. Пустые строки игнорируются:
       <textarea name="CDCComboBox_items" class="block" rows="5"><?=htmlspecialchars (stripslashes ($_POST['CDCComboBox_items']));?></textarea>
-<?
+<?php
       }
 
       function ReceiveSettings () {

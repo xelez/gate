@@ -1,7 +1,7 @@
 <?php
   global $_FILES, $storage, $size, $field, $user_id, $formname, $value;
   include '../../../globals.php';
-  include $DOCUMENT_ROOT.'/inc/include.php';
+  require_once $DOCUMENT_ROOT.'/inc/include.php';
   db_connect ();
 ?>
 <html>

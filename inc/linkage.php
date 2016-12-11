@@ -41,7 +41,7 @@
 
       array_multisort ($arr, SORT_ASC, SORT_STRING);
       foreach ($arr as $k) {
-        include $DOCUMENT_ROOT.$k;
+        require_once $DOCUMENT_ROOT.$k;
       }
       closedir ($dir);
     }
