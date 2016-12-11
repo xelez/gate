@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CVCVirtual_ != '#CVCVirtual_included#') {
-    $_CVCVirtual_ = '#CVCVirtual_included#';
 
     class CVCVirtual extends CVirtual {
       function CVCVirtual () { $this->SetClassName ('CVCVirtual'); }
@@ -46,5 +44,4 @@
     }
 
     content_Register_VCClass ('CVCVirtual');
-  }
 ?>

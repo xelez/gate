@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CVCContainerArray_ != '#CVCContainerArray_Included#') {
-    $_CVCContainerArray_ = '#CVCContainerArray_Included#';
 
     class CVCContainerArray extends CVCVirtual {
       var $containers;
@@ -54,5 +52,4 @@
     }
 
     content_Register_VCClass ('CVCContainerArray');
-  }
 ?>

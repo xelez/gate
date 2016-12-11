@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CDCTime_ != '#CDCTime_included#') {
-    $_CDCTime_ = '#CDCTime_included#';
 
     class CDCTime extends CDCVirtual {
       function CDCTime () { $this->SetClassName ('CDCTime'); }
@@ -31,5 +29,4 @@
     }
 
     content_Register_DCClass ('CDCTime', 'Время');
-  }
 ?>

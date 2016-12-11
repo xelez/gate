@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CDCIFrame_ != '#CDCIFrame_included#') {
-    $_CDCIFrame_ = '#CDCIFrame_included#';
 
     class CDCIFrame extends CDCVirtual {
       function CDCIFrame () { $this->SetClassName ('CDCIFrame'); }
@@ -90,5 +88,4 @@
 
     }
     content_Register_DCClass ('CDCIFrame', 'Визуально редактирыемый текст с форматированием');
-  }
 ?>

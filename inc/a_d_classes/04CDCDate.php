@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CDCDate_ != '#CDCDate_included#') {
-    $_CDCDate_ = '#CDCDate_included#';
 
     class CDCDate extends CDCVirtual {
       function CDCDate () { $this->SetClassName ('CDCDate'); }
@@ -46,5 +44,4 @@
     }
 
     content_Register_DCClass ('CDCDate', 'Дата');
-  }
 ?>

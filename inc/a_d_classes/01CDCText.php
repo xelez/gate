@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CDCText_ != '#CDCText_included#') {
-    $_CDCText_ = '#CDCText_included#';
 
     class CDCText extends CDCVirtual {
       function CDCText () { $this->SetClassName ('CDCText'); }
@@ -66,5 +64,4 @@
     }
 
     content_Register_DCClass ('CDCText', 'Текстовое поле');
-  }
 ?>

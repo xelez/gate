@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CVCAppendingList_ != '#CVCAppendingList_Included#') {
-    $_CVCAppendingList_ = '#CVCAppendingList_Included#';
 
     class CVCAppendingList extends CVCVirtual {
       var $name, $items, $itemsUsed;
@@ -84,5 +82,4 @@
     }
 
     content_Register_VCClass ('CVCAppendingList');
-  }
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CVCContent_ != '#CVCContent_Included#') {
-    $_CVCContent_ = '#CVCContent_Included#';
 
     class CVCContent extends CVCVirtual {
       var $metas;
@@ -54,5 +52,4 @@
     }
 
     content_Register_VCClass ('CVCContent');
-  }
 ?>

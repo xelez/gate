@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CCList_ != '#CCList_Included#') {
-    $_CCList_ = '#CCList_included#';
 
     class CCList extends CCVirtual {
       var $dataset, $timestamp, $user_id;
@@ -91,7 +89,7 @@
         content_destroy_support_table ($this->content_id,
                                        $this->settings['dataset']['id']);
       }
-    
+
       //////
       //
       function ReceiveContentByQuery ($clause = '', $suff = '') {
@@ -353,7 +351,6 @@
       function GetTimestamp () { return $this->timestamp; }
       function GeUserId     () { return $this->userid; }
     }
-  
+
     content_Register_CClass ('CCList', 'Лист');
-  }
 ?>

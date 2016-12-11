@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CVCMenu_ != '#CVCMenu_Included#') {
-    $_CVCMenu_ = '#CVCMenu_Included#';
 
     class CVCMenu extends CVCVirtual {
       var $items, $active_item_tag;
@@ -72,5 +70,4 @@
     }
 
     content_Register_VCClass ('CVCMenu');
-  }
 ?>

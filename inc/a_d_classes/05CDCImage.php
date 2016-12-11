@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CDCImage_ != '#CDCImage_included#') {
-    $_CDCImage_ = '#CDCImage_included#';
 
     $image_stuff_included = false;
     $image_contentSettingsform_stuff_included = false;
@@ -183,8 +181,8 @@
                     'value'    => $this->GetValue (),
                     'formname' => $formname,
                     'storage'  => $this->settings['storage'],
-                    'size'     => $this->settings['size'], 
-                    'hlimit'   => $this->settings['hlimit'], 
+                    'size'     => $this->settings['size'],
+                    'hlimit'   => $this->settings['hlimit'],
                     'vlimit'   => $this->settings['vlimit']);
 
         if ($this->GetValue ()!='') {
@@ -226,5 +224,4 @@
     }
 
     content_Register_DCClass ('CDCImage', 'Изображение');
-  }
 ?>

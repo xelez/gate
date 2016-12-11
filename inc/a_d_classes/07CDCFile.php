@@ -17,9 +17,7 @@
     die;
   }
 
-  if ($_CDCFile_ != '#CDCFile_included#') {
-    $_CDCFile_ = '#CDCFile_included#';
-    $file_contentSettingsform_stuff_included = false;
+      $file_contentSettingsform_stuff_included = false;
     $file_stuff_included = false;
 
     class CDCFile extends CDCVirtual {
@@ -236,5 +234,4 @@
     }
 
     content_Register_DCClass ('CDCFile', 'Файл');
-  }
 ?>

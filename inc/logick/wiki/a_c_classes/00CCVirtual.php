@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CCVirtual_ != '#CCVirtual_Included#') {
-    $_CCVirtual_ = '#CCVirtual_included#';
 
     class CCVirtual extends CVirtual {
       var $instanceInitialized=false;
@@ -75,7 +73,7 @@
           create_file ($d.'/'.$s['file'], $src);
         }
       }
-    
+
       function Editor_DeleteDirContent ($d) {
         unlink ($d.'/index.php');
 
@@ -84,7 +82,7 @@
           unlink ($d.'/'.$s['file']);
         }
       }
-    
+
       function Editor_MoveDirContent ($oldPath, $path) {
         content_recursive_move ($oldPath, $path);
       }
@@ -126,12 +124,11 @@
         db_update ('content', array ('settings' => $s),
                    '`id`='.$this->content_id);
       }
-    
+
       function SetName ($v) { $this->name = $v; }
       function GetName ()   { return $this->name; }
 
       function GetRSSData ($limit) { return array (); }
     }
 
-  }
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CVirtual_ != '#CVirtual_included#') {
-    $_CVirtual_ = '#CVirtual_included#';
 
     class CVirtual {
       var $className;
@@ -52,7 +50,7 @@
       }
 
       // Get single setting
-      function GetSetting ($s) { return $this->settings[$s]; } 
+      function GetSetting ($s) { return $this->settings[$s]; }
 
       // Set single setting
       function SetSetting ($s, $v) { $this->settings[$s] = $v; }
@@ -81,5 +79,4 @@
     }
 
     content_Register_VCClass ('CVCVirtual', '');
-  }
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CVCForm_ != '#CVCForm_Included#') {
-    $_CVCForm_ = '#CVCForm_Included#';
 
      class CVCForm extends CVCVirtual {
       var $fields = array ();
@@ -316,5 +314,4 @@
     }
 
      content_Register_VCClass ('CVCForm');
-  }
 ?>

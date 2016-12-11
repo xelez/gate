@@ -17,9 +17,7 @@
     die;
   }
 
-  if ($_CVCPagintation_ != '#CVCPagintation_Included#') {
-    $_CVCPagintation_ = '#CVCPagintation_Included#';
-    class CVCPagintation extends CVCVirtual {
+      class CVCPagintation extends CVCVirtual {
       var $pages = array ();
       var $defaultStencil = array (
         'outer' => '<div class="pagintation">Страницы: $(items)</div>',
@@ -163,5 +161,4 @@
      }
 
      content_Register_VCClass ('CVCPagintation');
-  }
 ?>

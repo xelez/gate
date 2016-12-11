@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CMMeta_ != '#CMMeta_Included#') {
-    $_CMMeta_ = '#CMMeta_Included#';
 
     class CMMeta extends CMVirtual {
       function CMMeta () { $this->SetClassName ('CMMeta'); }
@@ -41,5 +39,4 @@
         return $result;
       }
     }
-  }
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CDCVirtual_ != '#CDCVirtual_included#') {
-    $_CDCVirtual_ = '#CDCVirtual_included#';
 
     class CDCVirtual extends CVirtual {
       var $val;
@@ -63,5 +61,4 @@
 
       function BuildInitScript ($field, $formname='') { return ''; }
     }
-  }
 ?>

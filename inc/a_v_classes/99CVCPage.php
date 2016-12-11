@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CVCPage_ != '#CVCPage_Included#') {
-    $_CVCPage_ = '#CVCPage_Included#';
 
     global $main_page;
 
@@ -213,5 +211,4 @@
     }
 
     content_Register_VCClass ('CVCPage');
-  }
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CDCComboBox_ != '#CDCComboBox_included#') {
-    $_CDCComboBox_ = '#CDCComboBox_included#';
 
     class CDCComboBox extends CDCVirtual {
       function CDCComboBox () { $this->SetClassName ('CDCComboBox'); }
@@ -69,5 +67,4 @@
     }
 
     content_Register_DCClass ('CDCComboBox', 'Выпадающий список');
-  }
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CMMeta_ != '#CMMeta_Included#') {
-    $_CMMeta_ = '#CMMeta_Included#';
 
     class CMMeta extends CMHeadTag {
 
@@ -34,5 +32,4 @@
     }
 
     content_Register_MCClass ('CMMeta');
-  }
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CVCTabCtrl_ != '#CVCTabCtrl_Included#') {
-    $_CVCTabCtrl_ = '#CVCTabCtrl_Included#';
 
     class CVCTabCtrl extends CVCVirtual {
       var $pageStarted = false;
@@ -121,5 +119,4 @@
       }
     }
     content_Register_VCClass ('CVCTabCtrl');
-  }
 ?>
