@@ -12,7 +12,7 @@
 
   global $IFACE;
 
-  if ($IFACE != "SPAWNING NEW IFACE" || $_GET['IFACE'] != '') {
+  if ($IFACE != "SPAWNING NEW IFACE") {
     print ('HACKERS?');
     die;
   }
