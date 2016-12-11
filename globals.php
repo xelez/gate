@@ -13,17 +13,5 @@
   global $DOCUMENT_ROOT, $IFACE;
 
   $IFACE = 'SPAWNING NEW IFACE';
-
-  /* Relative directory name */
-  $relative = 'gate';
-
-  $s = $_SERVER['DOCUMENT_ROOT'];
-
-  /* Get full path where scripts aer stored */
-  if (substr ($s, strlen ($s)-strlen ($relative)-1, strlen ($relative)) == $relative) {
-    $relative = '';
-  }
-
-  $DOCUMENT_ROOT = $_SERVER['DOCUMENT_ROOT'].$relative;
-  $DOCUMENT_ROOT = preg_replace ('/\/*$/', '', $DOCUMENT_ROOT);
+  $DOCUMENT_ROOT = __DIR__;
 ?>
