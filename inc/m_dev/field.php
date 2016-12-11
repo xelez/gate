@@ -276,7 +276,7 @@
       return $c;
     }
 
-    function manage_datafield_create ($dataset, $type, $title, $field, $out) {
+    function manage_datafield_create ($dataset, $type, $title, $field, &$out) {
       $out = manage_spawn_datafield (-1, $dataset, $type, $title, $field);
       return $out->Create ();
     }
@@ -286,12 +286,12 @@
       $c->Destroy ();
     }
 
-    function manage_datafield_update ($id, $title, $out) {
+    function manage_datafield_update ($id, $title, &$out) {
       $out = manage_spawn_datafield ($id);
       return $out->Update ($title);
     }
 
-    function manage_datafield_update_received ($id, $out)   {
+    function manage_datafield_update_received ($id, &$out)   {
       $out = manage_spawn_datafield ($id);
       $out->UpdateReceived ();
     }

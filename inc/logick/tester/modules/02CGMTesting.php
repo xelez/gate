@@ -277,7 +277,7 @@
                       'autostart' => false, 'timelimit' => 0);
       }
 
-      function PerformCreation ($params) {
+      function PerformCreation (&$params) {
         $params = $this->DefaultContestSettings ();
       }
 

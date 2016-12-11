@@ -64,7 +64,7 @@
         for ($i = 0, $n = count ($cmds); $i < $n; ++$i) {
           $c = $cmds[$i];
           $b = $wt->SendCommand ($c['cmd'], $c['args']);
-          $b = $wt->ParseBuf ($b, &$state);
+          $b = $wt->ParseBuf ($b, $state);
           if ($state != '+OK') {
             $err = true; break;
           }

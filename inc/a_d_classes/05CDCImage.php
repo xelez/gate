@@ -104,7 +104,7 @@
         return true;
       }
 
-      function UpdateLimitSetting ($arr, $title, $field, $suff) {
+      function UpdateLimitSetting (&$arr, $title, $field, $suff) {
         if ($_POST['cntset_'.$field.'_'.$suff]) {
           if (!isnumber ($_POST['cntset_'.$field.'_'.$suff.'_val'])) {
             add_info ('Некорректное ограничение изображения в поле &laquo;'.$title.'&raquo;');
@@ -128,9 +128,9 @@
         $res = array ();
         $res['storage'] = $st;
 
-        if (!$this->UpdateLimitSetting (&$res, $title, $field, 'hlimit')) return false;
-        if (!$this->UpdateLimitSetting (&$res, $title, $field, 'vlimit')) return false;
-        if (!$this->UpdateLimitSetting (&$res, $title, $field, 'size')) return false;
+        if (!$this->UpdateLimitSetting ($res, $title, $field, 'hlimit')) return false;
+        if (!$this->UpdateLimitSetting ($res, $title, $field, 'vlimit')) return false;
+        if (!$this->UpdateLimitSetting ($res, $title, $field, 'size')) return false;
 
         $this->settings['data']=$res;
         $this->settings=combine_arrays ($this->settings, $res);

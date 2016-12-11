@@ -70,7 +70,7 @@
       return $src;
     }
 
-    function wiki_eval_page ($url, $wiki, $error) {
+    function wiki_eval_page ($url, $wiki, &$error) {
       $error = false;
 
       if (($src = wiki_get_page_src ($url, $wiki)) == false) {
@@ -98,10 +98,9 @@
       redirector_add_skipvar ('oldid');
 
       $error = false;
-      $src = wiki_eval_page ($url, $wiki, &$error);
+      $src = wiki_eval_page ($url, $wiki, $error);
       if ($error) {
         return $src;
-        return;
       }
 
       $cur = prepare_arg (get_redirection (false, true));

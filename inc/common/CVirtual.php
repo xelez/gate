@@ -70,7 +70,7 @@
       function UnserializeSettings ($s) {
         $settings = unserialize ($s);
 
-        if (is_array (&$settings)) {
+        if (is_array ($settings)) {
           $this->settings=$settings;
         } else {
           $this->SetDefaultSettings ();

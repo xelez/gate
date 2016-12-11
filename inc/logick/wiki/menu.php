@@ -27,7 +27,7 @@
   
     $wiki_menu_global_vars = nil;
 
-    function wiki_menu_parse_item ($src, $params) {
+    function wiki_menu_parse_item ($src, &$params) {
       global $wiki_menu_global_vars;
 
       if ($wiki_menu_global_vars == nil) {
@@ -146,7 +146,7 @@
             }
 
             $item = preg_replace ('/([\.\,]+\s*)(.*)/si', '\2', $buf);
-            $s = wiki_menu_parse_item ($item, &$params);
+            $s = wiki_menu_parse_item ($item, $params);
             if ($s != false) {
               $menuItems[$curDepth][]=array ('src' => $s,
                                              'nomarker' => $buf[0] == ',');

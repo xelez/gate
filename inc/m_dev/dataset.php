@@ -132,7 +132,7 @@
       }
 
       function AppendField ($type, $title, $field) {
-        if (manage_datafield_create ($this->id, $type, $title, $field, &$c)) {
+        if (manage_datafield_create ($this->id, $type, $title, $field, $c)) {
           $fields[] = $c;
           return true;
         }
@@ -172,7 +172,7 @@
       }
 
       function UpdateField ($id, $title) {
-        $r = manage_datafield_update ($id, $title, &$c);
+        $r = manage_datafield_update ($id, $title, $c);
 
         for ($i = 0; $i < count ($this->fields); $i++) {
           if ($this->fields[$i]->GetID () == $id) {
@@ -184,7 +184,7 @@
       }
 
       function UpdateReceivedField ($id) {
-        $r = manage_datafield_update_received ($id, &$c);
+        $r = manage_datafield_update_received ($id, $c);
 
         for ($i = 0; $i < count ($this->fields); $i++) {
           if ($this->fields[$i]->GetID () == $id) {

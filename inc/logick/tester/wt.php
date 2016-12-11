@@ -112,7 +112,7 @@
                             $this->OptGet ('WT_server_pass', 'WT-pass'));
       }
 
-      function ParseBuf ($buf, $stat) {
+      function ParseBuf ($buf, &$stat) {
         $space = strpos ($buf, ' ');
         $stat = substr ($buf, 0, $space);
         return substr ($buf, $space + 1, strlen ($buf) - 1 - $space);

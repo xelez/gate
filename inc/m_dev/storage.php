@@ -208,7 +208,7 @@
         @chmod ($full, 0664);
       }
 
-      function GetImageParams ($data, $arr) {
+      function GetImageParams ($data, &$arr) {
         $size = GetImageSize ($data['tmp_name']);
         $arr['width']  = $size[0];
         $arr['height'] = $size[1];
@@ -222,7 +222,7 @@
         $arr['ext']  = preg_replace ('/.*\./si', '', $data['name']);
 
         if (preg_match ('/^image/',$arr['mime'])) {
-          $this->GetImageParams ($data, &$arr);
+          $this->GetImageParams ($data, $arr);
         }
 
         return $arr;

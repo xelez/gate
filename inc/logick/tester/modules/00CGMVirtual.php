@@ -31,7 +31,7 @@
       function SetModuleName ($v) { $this->module=$v; }
       function GetModuleName ()   { return $this->module; }
 
-      function PerformCreation        ($params) {  }
+      function PerformCreation        (&$params) {  }
       function PerformContestDeletion ($id)     {  }
       function PerformContestStateUpdate ($contest, $state) {  }
       function Contest_Manager ($id, $clear = false) {  }

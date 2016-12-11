@@ -51,7 +51,7 @@
         $lib->PerformContestStateUpdate ($c, $state);
       }
 
-      function ReNewOneStatus ($c, $ns = 0) {
+      function ReNewOneStatus ($c, &$ns = 0) {
         $s = $c['settings'];
 
         if ($c['settings']['autostart'] && $c['status'] != 2 &&
@@ -129,7 +129,7 @@
         while ($r = db_row ($q)) {
           $arr = $r;
           $s = $arr['settings'] = unserialize ($r['settings']);
-          $arr['status'] = $this->ReNewOneStatus ($arr, &$s);
+          $arr['status'] = $this->ReNewOneStatus ($arr, $s);
           $arr['settings'] = $s;
           $this->data[] = $arr;
         }
@@ -162,7 +162,7 @@
         $_POST = array ();
         $lib = WT_spawn_new_library ($lid);
         $params = array ();
-        $lib->PerformCreation (&$params);
+        $lib->PerformCreation ($params);
         db_insert ('tester_contests',
                    array ('name' => db_html_string ($name), 'lid' => $lid,
                           'status' => 0,

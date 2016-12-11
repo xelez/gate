@@ -547,19 +547,19 @@
       $c->Down ();
     }
   
-    function wiki_content_rec ($id, $res) {
+    function wiki_content_rec ($id, &$res) {
       if ($id <= 1) {
         return '';
       }
 
       $r = db_row_value ('content', "`id`=$id");
-      wiki_content_rec ($r['pid'], &$res);
+      wiki_content_rec ($r['pid'], $res);
       $res[] = $r;
     }
 
     function wiki_content_navigator ($id, $getdata='') {
       $arr = array ();
-      wiki_content_rec ($id, &$arr);
+      wiki_content_rec ($id, $arr);
 
       for ($i = 0; $i < count ($arr) - 1; $i++) {
         $res .= '<a href=".?'.$getdata.(($getdata!='')?('&'):('')).'id='.

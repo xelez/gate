@@ -23,7 +23,7 @@
     function sock_connect ($server, $port, $timeout = 0) {
       if (!$timeout)
         @ $sock = fsockopen ($server, $port); else
-        @ $sock = fsockopen ($server, $port, &$errno, &$errstr, $timeout);
+        @ $sock = fsockopen ($server, $port, $errno, $errstr, $timeout);
       return $sock;
     }
 

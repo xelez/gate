@@ -746,7 +746,7 @@
                       'archive' => '');
       }
 
-      function PerformCreation ($params) {
+      function PerformCreation (&$params) {
         $params = $this->DefaultContestSettings ();
       }
 

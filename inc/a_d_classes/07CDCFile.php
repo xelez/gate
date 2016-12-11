@@ -104,7 +104,7 @@
         return true;
       }
 
-      function UpdateLimitSetting ($arr, $title, $field, $sfield, $suff) {
+      function UpdateLimitSetting (&$arr, $title, $field, $sfield, $suff) {
         if ($_POST['cntset_'.$field.'_'.$suff]) {
           if (!isnumber ($_POST['cntset_'.$field.'_'.$suff.'_val'])) {
             add_info ('Некорректное ограничение файла в поле &laquo;'.$title.'&raquo;');
@@ -128,7 +128,7 @@
         $res = array ();
         $res['storage'] = $st;
 
-        if (!$this->UpdateLimitSetting (&$res, $title, $field,
+        if (!$this->UpdateLimitSetting ($res, $title, $field,
             'size', 'file_size')) {
           return false;
         }
