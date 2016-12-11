@@ -29,7 +29,7 @@
   $dir = opendir ($DOCUMENT_ROOT.'/pics/captcha/fonts');
   while (($file = readdir ($dir)) != false) {
     if ($file != '.' && $file != '..') {
-      if (eregi ('.*\.png$', $file)) {
+      if (preg_match ('/.*\.png$/i', $file)) {
         $fonts[] = $file;
       }
     }

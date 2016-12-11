@@ -17,9 +17,7 @@
     die;
   }
 
-
-    $file_encrypted_allowed = array ();
-    session_register ('file_encrypted_allowed');
+    $_SESSION["file_encrypted_allowed"] = array();
 
     function file_check_tables () {
       if (config_get ('check-database')) {
@@ -220,13 +218,11 @@
     }
 
     function file_allow_encrypted ($id, $val=true) {
-      global $file_encrypted_allowed;
-      $file_encrypted_allowed[$id] = $val;
+      $_SESSION["file_encrypted_allowed"][$id] = $val;
     }
 
     function file_encrypted_on_user_logout () {
-      global $file_encrypted_allowed;
-      $file_encrypted_allowed = array ();
+      $_SESSION["file_encrypted_allowed"] = array ();
     }
 
     hook_register ('CORE.Security.OnUserLogout', file_encrypted_on_user_logout);
