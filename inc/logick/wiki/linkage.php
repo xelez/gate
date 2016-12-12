@@ -17,7 +17,7 @@
     die;
   }
 
-  if ($_wiki_linked_ != '#wiki_linked#') {
+  if (empty($_wiki_linked_)) {
     $_wiki_linked_ = '#wiki_linked#';
 
     $dirs = array (

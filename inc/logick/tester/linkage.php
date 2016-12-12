@@ -17,7 +17,7 @@
     die;
   }
 
-  if ($_WT_linked_ != '#linked#') {
+  if (empty($_WT_linked_)) {
     $_WT_linked_ = '#linked#';
 
     $dirs = array (

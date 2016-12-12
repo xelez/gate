@@ -17,7 +17,7 @@
     die;
   }
 
-  if ($_linked_ != '#linked#') {
+  if (empty($_linked_)) {
     $_linked_ = '#linked#';
 
     $dirs = array (
