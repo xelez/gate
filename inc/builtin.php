@@ -63,7 +63,7 @@
     }
 
     function unserialize_params ($s) {
-      if ($s[strlen ($s)] != ';') {
+      if ($s[strlen($s) - 1] != ';') {
         $s .= ';';
       }
 
