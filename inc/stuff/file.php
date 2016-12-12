@@ -225,5 +225,5 @@
       $_SESSION["file_encrypted_allowed"] = array ();
     }
 
-    hook_register ('CORE.Security.OnUserLogout', file_encrypted_on_user_logout);
+    hook_register ('CORE.Security.OnUserLogout', 'file_encrypted_on_user_logout');
 ?>

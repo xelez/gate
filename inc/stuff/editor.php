@@ -23,7 +23,7 @@
     $editor_usage     = array ();
 
     function editor_initialize ($name = 'default') {
-      global $editor_menus, $function;
+      global $editor_menus, $editor_functions, $function;
 
       if (isset ($editor_menus[$name])) {
         return;
@@ -35,17 +35,17 @@
 
       //editor_get_valid_function ();
       $editor_menus[$name]->SetActiveByIndex ($function);
+      $editor_functions[$name] = array(0);
     }
 
     function editor_add_function ($title, $function, $name = 'default', $args = '') {
       global $editor_functions;
-      global $editor_menus, $editor_function, $editor_usage, $id;
+      global $editor_menus, $editor_usage;
 
-      if ($editor_usage [$title][$function][$name]) {
+      if (!empty($editor_usage [$title][$function][$name])) {
         return;
       }
 
-      //if (isset ($editor_function[$name][$function])) return;
       $fid = count ($editor_functions[$name]);
       $editor_menus[$name]->AppendItem ($title, content_url_get_full ().
                                         '&function='.$fid.'&'.$args, $function);

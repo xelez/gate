@@ -83,10 +83,10 @@
     }
 
     function ipc_initialize () {
-      ipc_register_function ('check_login',       ipc_check_login);
-      ipc_register_function ('check_email',       ipc_check_email);
-      ipc_register_function ('check_wiki_node',   ipc_check_wiki_node);
-      ipc_register_function ('check_path_exists', ipc_check_path_exists);
+      ipc_register_function ('check_login',       'ipc_check_login');
+      ipc_register_function ('check_email',       'ipc_check_email');
+      ipc_register_function ('check_wiki_node',   'ipc_check_wiki_node');
+      ipc_register_function ('check_path_exists', 'ipc_check_path_exists');
     }
 
     function ipc_exec ($func) {
