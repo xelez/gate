@@ -364,9 +364,9 @@
 
         for ($i = 0; $i < count ($this->fields); $i++) {
           if (!$parse) {
-            $val= $this->fields[$i]->GetValue ($arr[$this->fields[$i]->GetField ()]);
+            $val= $this->fields[$i]->GetValue ();
           } else {
-            $val = $this->fields[$i]->Value ($arr[$this->fields[$i]->GetField ()]);
+            $val = $this->fields[$i]->Value ();
           }
 
           if ($stringify) {

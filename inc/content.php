@@ -174,7 +174,14 @@
       return wiki_get_page ($url);
     }
 
-    function content_url_var_pop  ($var)         { global $content_url_vars; $res=$content_url_vars[$var]; unset ($content_url_vars[$var]); return $res; }
+    function content_url_var_pop  ($var) {
+      global $content_url_vars;
+      if (!isset($content_url_vars[$var]))
+        return '';
+      $res=$content_url_vars[$var];
+      unset ($content_url_vars[$var]);
+      return $res;
+    }
     function content_url_var_push ($var, $val = '')  { global $content_url_vars; $content_url_vars[$var]=$val; }
     function content_url_var_push_global ($var) { global $content_url_vars; $content_url_vars[$var]=$GLOBALS[$var]; }
     function content_url_get      ($val)        { global $content_url_vars; return $content_url_vars[$var]; }

@@ -44,7 +44,7 @@
 
     function handler_build_callback ($callback) {
       $res = $callback['callback'].' (';
-      $printend = false;
+      $printed = false;
       $params = $callback['params'];
 
       for ($i = 0; $i < count ($params); $i++) {
