@@ -17,9 +17,6 @@
     die;
   }
 
-  if ($_SETCIL_Pagintation_ != '123STENCIL_Pagintation321') {
-    $_SETCIL_Pagintation_ = '123STENCIL_Pagintation321';
-
     function stencil_pagintation ($count, $current = 0,
                                   $url_prefix = '', $pageid = 'pageid') {
       if ($url_prefix == '') {
@@ -59,7 +56,6 @@
 
     function pagintation ($count, $current = 0, $url_prefix = '',
                           $pageid = 'pageid') {
-      println (stencil_pagintation ($count, $current, $url_orefix, $pageid));
+      println (stencil_pagintation ($count, $current, $url_prefix, $pageid));
     }
-  }
 ?>
