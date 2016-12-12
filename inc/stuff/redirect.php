@@ -49,7 +49,7 @@
         }
       }
 
-      $dummy = preg_replace ('/\?.*$/', '', $GLOBALS['REQUEST_URI']);
+      $dummy = preg_replace ('/\?.*$/', '', $_SERVER['REQUEST_URI']);
       $result = $dummy.(($result!='')?('?'.$result):(''));
 
       if (!$encode) {

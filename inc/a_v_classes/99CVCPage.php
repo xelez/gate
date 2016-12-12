@@ -72,7 +72,7 @@
       }
 
       function AddScriptFile ($file, $lang = 'JavaScript') {
-        if ($this->appenedScripts[$file]) {
+        if (!empty($this->appenedScripts[$file])) {
           return;
         }
 
