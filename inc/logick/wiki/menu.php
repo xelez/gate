@@ -46,7 +46,7 @@
       $data = preg_replace ('/^([\:lL]+)?(\s*)(.*)/si', '\3', $src);
       $parse = true;
 
-      for ($i = 0; $i < count ($modifers); $i++) {
+      for ($i = 0; $i < strlen ($modifers); $i++) {
         if ($modifers[$i]==':') $parse = false;
         if ($modifers[$i]=='l' && !user_authorized ()) return false;
         if ($modifers[$i]=='L' && user_authorized ()) return false;
@@ -74,6 +74,7 @@
 
       $n = count ($items);
       $opened = false;
+      $res = '';
 
       for ($i = 0; $i < $n; $i++) {
         $nomarker = $items[$i]['nomarker'];
@@ -113,14 +114,15 @@
       $curDepth = 0;
       $menuItems = array ();
 
+      $i = 0;
       while ($i < $n) {
         // Get da string
         $buf = '';
-        while ($src[$i] <= ' ' && $i<$n) {
+        while ($i < $n && $src[$i] <= ' ') {
           $i++;
         }
 
-        while ($src[$i] != "\n" && $src[$i] != "\r" && $i < $n)  {
+        while ($i < $n && $src[$i] != "\n" && $src[$i] != "\r")  {
           $buf .= $src[$i];
           $i++;
         }
@@ -129,6 +131,7 @@
           $menu_uk++;
           $caption = preg_replace ('/^\+\s*/si', '', $buf);
           $menus[$menu_uk]['caption'] = $caption;
+          $menus[$menu_uk]['items'] = array();
           $curDepth = 0;
           $menuItems[0] = &$menus[$menu_uk]['items'];
         } else {
@@ -147,7 +150,9 @@
             $s = wiki_menu_parse_item ($item, $params);
             if ($s != false) {
               $menuItems[$curDepth][]=array ('src' => $s,
-                                             'nomarker' => $buf[0] == ',');
+                                             'nomarker' => $buf[0] == ',',
+                                             'items' => array()
+                                            );
             }
           }
         }
