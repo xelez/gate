@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_IFrame_helpers_included_ != '#IFrameHelpers_Included#') {
-    $_IFrame_helpers_included_ = '#IFrameHelpers_Included#';
 
     function iframe_get_images ($src) {
       preg_match_all ("'<img[\/\!]*?[^<>]*?>'si", $src, $arr);
@@ -46,5 +44,5 @@
 
     return $res;
   }
-}
+
 ?>

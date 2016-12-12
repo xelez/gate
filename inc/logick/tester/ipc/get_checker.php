@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_ipc_get_checker_included_ != '###WT_IPC_GetChecker_Inclided###') {
-    $_WT_ipc_get_checker_included_ = '###WT_IPC_GetChecker_Inclided###';
 
     function WT_GetChecker () {
       if (!WT_IPC_CheckLogin ()) {
@@ -37,5 +35,5 @@
     }
 
     ipc_register_function ('get_checker', WT_GetChecker);
-  }
+
 ?>

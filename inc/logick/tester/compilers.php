@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_compilers_included_ != '###WT_compilers_included###') {
-    $_WT_compilers_included_ != '###WT_compilers_included###';
 
     global $WT_compilers_container;
     $WT_compilers_container = NULL;
@@ -30,7 +28,7 @@
         global $WT_Compilers;
         $this->data = $WT_Compilers;
       }
-    
+
       function CompilerSelector ($allowed = '*', $formname = '',$active = '') {
         $n = count ($this->data);
         $res = '<select id="'.$formname.'_compiler" name="'.$formname.
@@ -51,12 +49,12 @@
         $res .= '</select>'."\n";
         return $res;
       }
-    
+
       function DrawCompilerSelector ($allowed = '*',
                                      $formname = '', $active = '') {
         println ($this->CompilerSelector ($allowed, $formname, $active));
       }
-    
+
       function GetList () {
         return $this->data;
       }
@@ -93,5 +91,5 @@
       $cnt = WT_spawn_new_compilers_container ();
       return $cnt->GetList ();
     }
-  }
+
 ?>

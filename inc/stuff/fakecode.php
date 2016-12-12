@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_FAKECODE_Included_ != '###FAKE_Included###') {
-    $_FAKECODE_Included_ == '###FAKE_Included###';
 
     global $fake_rules;
 
@@ -95,10 +93,10 @@
       $s = htmlspecialchars ($s);
 
       // Parsing new lines
-      $s = str_replace ("\n", '<br>', str_replace ("\r\n", '<br>', $s)); 
+      $s = str_replace ("\n", '<br>', str_replace ("\r\n", '<br>', $s));
 
       $s = fake_apply_rules ($s);
       return $s;
     }
-  }
+
 ?>

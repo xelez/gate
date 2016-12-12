@@ -17,9 +17,6 @@
     die;
   }
 
-  if ($_manage_storage_included_ != '#manage_storage_Included#') {
-    $_manage_storage_included_ = '#manage_storage_Included#'; 
-
     $manage_storage_cache = array ();
 
     class CStorage extends CVirtual  {
@@ -365,5 +362,5 @@
 
       return null;
     }
-  }
+
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_SOCK_Included_ != '##SOCK_Included##') {
-    $_SOCK_Included_ = '##SOCK_Included##';
 
     function sock_connect ($server, $port, $timeout = 0) {
       if (!$timeout)
@@ -73,5 +71,5 @@
     function sock_set_blocking ($socket, $val) {
       @ set_socket_blocking ($socket, $val);
     }
-  }
+
 ?>

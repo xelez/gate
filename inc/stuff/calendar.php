@@ -17,9 +17,7 @@
     die;
   }
 
-  if ($_Calendar_included != '##calendar_Included##') {
-    $_Calendar_included = '##calendar_Included##';
-    $calendar_sutff_included = false;
+      $calendar_sutff_included = false;
 
     function calendar_include_stuff () {
       global $calendar_sutff_included, $CORE;
@@ -44,5 +42,5 @@
       tplp ('back/calendar', array ('name'=>$name, 'date'=>$date));
       add_body_handler ('onload', 'calendar_Init', array ('"'.$name.'"'));
     }
-  }
+
 ?>

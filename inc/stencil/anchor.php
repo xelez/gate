@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($stencil_anchor_included != '#stencil_anchor_Included#') {
-    $stencil_anchor_included = '#stencil_anchor_Included#';
 
     $anchor_appened = false;
 
@@ -45,5 +43,5 @@
                          $dragable = true) {
       println (stencil_dnd_anchor ($id, $callback, $hint, $dragable));
     }
-  }
+
 ?>

@@ -124,7 +124,7 @@
         global $CORE, $security_orders, $security_actions;
         global $securoty_builtin_included;
 
-        if (!isset ($securoty_builtin_included)) {
+        if (empty($securoty_builtin_included)) {
           $CORE->AddScript ( 'language=JavaScript;',
                              tpl ('back/security/script',
                                   array ('limits' => $this->security_limits,

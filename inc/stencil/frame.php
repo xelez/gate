@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($stencil_frame_included != '#stencil_frame_Included#') {
-    $stencil_frame_included = '#stencil_frame_Included#';
 
     function stencil_tframe ($content, $caption = '') {
       return tpl ('back/stencil/frame',
@@ -32,7 +30,7 @@
     }
 
     function stencil_groupc () { return ('</div></div>'); }
-  
+
     function stencil_lblocko ($p = array ()) {
       $p = unserialize_params ($p);
 
@@ -60,5 +58,5 @@
     function lblocko ($p = array ()) { println (stencil_lblocko ($p)); }
     function lblockc ()              { println (stencil_lblockc ()); }
 
-  }
+
 ?>

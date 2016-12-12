@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_gateway_included_ != '##gateway_Included##') {
-    $_gateway_included_ = '##gateway_Included##';
 
     global $WT_gateway;
 
@@ -192,7 +190,7 @@
         $this->nav = array ();
         $this->security = new CGWSecurityInformation ();
         $this->security->Init ('WT_security');
-      
+
         $r = db_row_value ('tester');
 
         $this->security->UnserializeData ($r['security']);
@@ -207,7 +205,7 @@
         $this->current_lib =
           WT_spawn_new_library ($this->current_contest['lid'], $this);
       }
-    
+
       function SpawnContestContainer () {
         return WT_spawn_new_contest_container ();
       }
@@ -249,11 +247,11 @@
       function CPrint      ($text) { $this->content.=$text; }
       function CPrintLn    ($text) { $this->content.=$text."\n"; }
       function GetContent  ()      { return $this->content; }
-    
+
       function AppendQuickLink ($cpt, $url) {
         $this->qlinks[] = array ('cpt' => $cpt, 'url' => $url);
       }
-    
+
       ////////
       //
 
@@ -313,7 +311,7 @@
 
       function DrawManage () {
         global $action;
- 
+
        if (!$this->AdminMode ()) {
          println ('HACKERS?');
          return;
@@ -527,7 +525,7 @@
         }
       }
 
-      function Handle_SaveSecurity () { 
+      function Handle_SaveSecurity () {
         $this->security->ReceiveData ();
         db_update ('tester',
                    array ('security' =>
@@ -568,5 +566,5 @@
 
       return $res + $bonus;
     }
-  }
+
 ?>

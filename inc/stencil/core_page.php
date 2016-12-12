@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($stencil_corePage_included != '#stencil_corePage_Included#') {
-    $stencil_corePage_included = '#stencil_corePage_Included#';
 
     function stencil_core_page ($content, $caption = 'Системная страница') {
       return tpl ('back/stencil/core_page',
@@ -28,5 +26,5 @@
     function core_page ($content, $caption = 'Системная страница') {
       println (stencil_core_page ($content, $caption));
     }
-  }
+
 ?>

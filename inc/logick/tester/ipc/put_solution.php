@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_ipc_put_solution_included_ != '###WT_IPC_PutSolution_Inclided###') {
-    $_WT_ipc_put_solution_included_ = '###WT_IPC_PutSolution_Inclided###';
 
     function WT_PutSolution () {
       global $id, $lid, $ERRORS, $POINTS, $XPFS;
@@ -81,5 +79,5 @@
     }
 
     ipc_register_function ('put_solution', WT_PutSolution);
-  }
+
 ?>

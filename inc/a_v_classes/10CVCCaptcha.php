@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CVCCaptcha_ != '#CVCCaptcha_Included#') {
-    $_CVCCaptcha_ = '#CVCCaptcha_Included#';
 
     class CVCCaptcha extends CVCVirtual {
       function CVCCaptcha () { $this->SetClassName ('CVCCaptcha'); }
@@ -39,5 +37,5 @@
     }
 
     content_Register_VCClass ('CVCCaptcha');
-  }
+
 ?>

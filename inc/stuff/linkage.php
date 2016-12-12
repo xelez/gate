@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_stuff_linkage_included_ != '##Linkage_Included') {
-    $_stuff_linkage_included_ = '##Linkage_Included';
 
     function linkage ($dirs) {
       global $DOCUMENT_ROOT;
@@ -56,5 +54,5 @@
         linkage ($subdirs);
       }
     }
-  }
+
 ?>

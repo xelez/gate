@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_Log_included_ != '#log_Included#') {
-    $_Log_included_='#log_Included#';
 
     function _log ($module, $status, $message) {
       $carr = service_by_classname ('CSCLog');
@@ -40,5 +38,5 @@
     function core_log_message ($message) { core_log ('MESSAGE', $message); }
     function core_log_error   ($message) { core_log ('ERROR',   $message); }
     function core_log_warning ($message) { core_log ('WARNING', $message); }
-  }
+
 ?>

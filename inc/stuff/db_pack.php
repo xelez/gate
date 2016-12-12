@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_dbpack_included_ != '#dbpack_Included#') {
-    $_cbpack_included_ = '#cbpack_Included#';
 
     // Unpacks packed assaciative array
     function db_unpack ($self) {
@@ -72,5 +70,5 @@
       }
       return $result;
     }
-  }
+
 ?>

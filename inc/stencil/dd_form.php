@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($stencil_ddForm_included != '#stencil_ddForm_Included#') {
-    $stencil_ddForm_included = '#stencil_ddForm_Included#';
 
     function stencil_dd_formo ($settings = '') {
       global $dd_form_stuff_included, $CORE;
@@ -64,5 +62,5 @@
     function dd_formc () {
       println (stencil_dd_formc ());
     }
-  }
+
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_ipc_get_task_list_included_ != '##WT_IPC_GetTaskList_Inclided##') {
-    $_WT_ipc_get_task_list_included_ = '##WT_IPC_GetTaskList_Inclided##';
 
     function WT_GetTaskList () {
       if (!WT_IPC_CheckLogin ()) {
@@ -38,5 +36,5 @@
     }
 
     ipc_register_function ('get_task_list', WT_GetTaskList);
-  }
+
 ?>

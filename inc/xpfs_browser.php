@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_xpfs_browser != '#XPFS-Browser-Included#') {
-    $_xpfs_browser = '#XPFS-Browser-Included#';
 
     global $XPFS;
 
@@ -280,5 +278,5 @@
         formc ();
       }
     }
-  }
+
 ?>

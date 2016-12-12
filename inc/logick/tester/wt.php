@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_included_ != '###WT_Inclided###') {
-    $_WT_util_included_ = '###WT_Inclided###';
 
     class WebTester {
       var $sock=-1;
@@ -52,7 +50,7 @@
 
         manage_settings_create ('Имя хоста основного сервера WebTester',
                                 'WebTester', 'WT_server_host',  'CSCText');
-        manage_settings_create ('IPC-порт основного сервера WebTester', 
+        manage_settings_create ('IPC-порт основного сервера WebTester',
                                 'WebTester', 'WT_server_port',  'CSCNumber');
         manage_settings_create ('Логин на основной сервер WebTester',
                                 'WebTester', 'WT_server_login', 'CSCText');
@@ -118,5 +116,5 @@
         return substr ($buf, $space + 1, strlen ($buf) - 1 - $space);
       }
     }
-  }
+
 ?>

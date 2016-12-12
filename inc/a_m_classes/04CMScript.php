@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CMScript_ != '#CMScript_Included#') {
-    $_CMScript_ = '#CMScript_Included#';
 
     class CMScript extends CMHeadTag {
       var $innerHTML;
@@ -39,5 +37,5 @@
   }
 
   content_Register_MCClass ('CMScript');
-}
+
 ?>

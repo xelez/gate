@@ -17,9 +17,6 @@
     die;
   }
 
-  if ($_manage_field_included_ != '#manage_dield_Included#') {
-    $_manage_field_included_ = '#manage_dield_Included#'; 
-
     $manage_datafiled_denied_fieldnames = array ('id', 'user_id', 'ip');
 
     class CDataField extends CVirtual {
@@ -308,5 +305,5 @@
 
     function manage_datafield_up   ($id) { $c = manage_spawn_datafield ($id); $c->Up ();}
     function manage_datafield_down ($id) { $c = manage_spawn_datafield ($id); $c->Down ();}
-  }
+
 ?>

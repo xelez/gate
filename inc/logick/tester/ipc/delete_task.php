@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_ipc_delete_task_included_ != '###WT_IPC_DeleteTask_Inclided###') {
-    $_WT_ipc_delete_task_included_ = '###WT_IPC_DeleteTask_Inclided###';
 
     function WT_DeleteTask () {
       global $id, $lid;
@@ -37,5 +35,5 @@
     }
 
     ipc_register_function ('delete_task', WT_DeleteTask);
-  }
+
 ?>

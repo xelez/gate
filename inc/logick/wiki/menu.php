@@ -17,14 +17,12 @@
     die;
   }
 
-  if ($_wiki_NavMenu_included_ != '##wiki_NavMenu_Included##') {
-    $_wiki_NavMenu_included_ != '##wiki_NavMenu_Included##';
 
     $wiki_menu_rules = array (
       array ('pattern' => '/\[url.*href\s*=\s*&quot;(.*)&quot;.*\]'.
              '(.*)\[\/url\]/si', 'replace'=>'<a href="\1">\2</a>')
     );
-  
+
     $wiki_menu_global_vars = NULL;
 
     function wiki_menu_parse_item ($src, &$params) {
@@ -42,7 +40,7 @@
       foreach ($vars as $var => $val) {
         $src = preg_replace ('/\$'.$var.'/', $val, $src);
       }
-  
+
       $params = array ();
       $modifers = preg_replace ('/^([\:lL]+)?(\s*)(.*)/si', '\1', $src);
       $data = preg_replace ('/^([\:lL]+)?(\s*)(.*)/si', '\3', $src);
@@ -169,5 +167,5 @@
       }
       return $res;
     }
-  }
+
 ?>

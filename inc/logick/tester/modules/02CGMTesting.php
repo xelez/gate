@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($__CGMTesting_Included__ != '##CGMTesting_Included##') {
-    $__CGMTesting_Included__ = '##CGMTesting_Included##';
 
     $WT_TESTING_Cache = array ();
 
@@ -119,7 +117,7 @@
       function Collect ($d, $assoc_data, $task_num, $form_prefix = '') {
         $user_ans = array ();
         $s = $d['settings'];
-      
+
         $name = $form_prefix.'_task_'.$task_num.'_ans';
         $t = $_POST[$name];
 
@@ -206,7 +204,7 @@
 
     class CGMTesting extends CGMVirtual {
       var $anstypes;
-  
+
       function CreateTables () {
         if (config_get ('check-database')) {
           if (!db_table_exists ('tester_categories')) {
@@ -295,7 +293,7 @@
 
         return $arr;
       }
- 
+
       function Contest_GetUserGroup  ($id = -1) {
         return $this->Contest_GetUserGroup_Iterator ($id, 'tester_contestgroup');
       }
@@ -426,7 +424,7 @@
 
         return true;
       }
-    
+
       function Contest_ActionHandler () {
         global $act, $uid, $id, $pid, $catid;
 
@@ -455,7 +453,7 @@
         } else if ($act == 'saveproblem') {
           $this->Problems_Save ($uid);
         }
-      } 
+      }
 
       function Contest_UpdateRecievedCompilers ($id = -1) {
         global $WT_contest_id;
@@ -477,7 +475,7 @@
             $arr[$list[$i]['id']] = 1;
           }
         }
-      
+
         $this->UpdateCompilers ($id, $arr);
       }
 
@@ -672,11 +670,11 @@
         if ($contest_id < 0) {
           $contest_id = $WT_contest_id;
         }
-      
+
         if (isset ($WT_TESTING_Cache['AllProblems'][$contest_id])) {
           return $WT_TESTING_Cache['AllProblems'][$contest_id];
         }
-      
+
         $arr = array ();
         $q = db_query ('SELECT `tp`.*, `tt`.`catid` '.
                        'FROM `tester_problems` AS `tp`, `tester_tasks` AS `tt` '.
@@ -694,7 +692,7 @@
 
         return $arr;
       }
-    
+
       function Problems_AllById ($contest_id = -1) {
         global $WT_TESTING_Cache;
 
@@ -764,7 +762,7 @@
         $this->InsertTemplate ('solutions', array ('lib' => $this));
         $this->CPrintLn (stencil_formc ());
       }
-    
+
       function PAGE_Status () {
         global $WT_contest_id, $action, $id;
         $manage=$this->IsContestJudge ();
@@ -902,7 +900,7 @@
 
         return $res;
       }
-    
+
       ////
       //
 
@@ -947,7 +945,7 @@
 
         return $res;
       }
-    
+
       function Test_CanObtain ($contest_id = -1, $user_id = -1) {
         global $WT_contest_id;
 
@@ -966,7 +964,7 @@
         if ($this->IsContestJudge ($user_id)) {
           return true;
         }
-      
+
         if (!WT_contest_running ($contest_id)) {
           return false;
         }
@@ -1054,13 +1052,13 @@
         return $this->Template ('subnav_info',
                                 array ('data' => $data, 'lib' => $this));
       }
-    
+
       ////
       //
-    
+
       function Check ($c, $p) {
         $all = $this->Problems_AllById ($c['id']);
-      
+
         $points = 0;
         $res = array ();
 
@@ -1138,5 +1136,5 @@
     }
 
     WT_Library_Register ('CGMTesting', 'Testing', 1);
-  }
+
 ?>

@@ -17,9 +17,6 @@
     die;
   }
 
-  if ($_manage_ds_included_ != '#manage_ds_Included#') {
-    $_manage_ds_included_ = '#manage_ds_Included#'; 
-
     global $manage_dataset_selector_stuffed;
 
     $manage_dataset_cache = array ();
@@ -499,7 +496,7 @@
       return arr_from_query ('SELECT * FROM `dataset_assoc` WHERE `dataset`='.$id.' ORDER BY `order`');
     }
 
-    function manage_dataset_get_list ()  { 
+    function manage_dataset_get_list ()  {
       global $manage_dataset_cache;
 
       if (isset ($manage_dataset_cache['DataSet.List'])) {
@@ -570,5 +567,5 @@
 
       return $dataset;
     }
-  }
+
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($WT_security_Included != '##WT_security_Included##') {
-    $WT_security_Included = '##WT_security_Included##';
 
     class CGWSecurityInformation extends CSecurityInformation {
       var $security_limits = array (
@@ -26,7 +24,7 @@
 
         '{{{{GROUP0}}}}'    => 'Контесты',
         'CONTEST.MANAGE'    => 'Управление контестом',
-        'CONTEST.CREATE'    => 'Создание контестов', 
+        'CONTEST.CREATE'    => 'Создание контестов',
         'CONTEST.DELETE'    => 'Удаление контестов',
 
         '{{{{GROUP1}}}}'    => 'Задачи',
@@ -59,5 +57,5 @@
         $this->SetCanInherit (false);
       }
     }
-  }
+
 ?>

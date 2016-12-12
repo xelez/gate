@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_included_ != '###WT_included###') {
-    $_WT_included_ != '###WT_included###';
 
     require_once $DOCUMENT_ROOT.'/inc/include.php';
     require_once $DOCUMENT_ROOT.'/inc/logick/tester/config/config.php';
@@ -36,5 +34,5 @@
     require_once $DOCUMENT_ROOT.'/inc/logick/tester/util.php';
     require_once $DOCUMENT_ROOT.'/inc/logick/tester/wt.php';
     require_once $DOCUMENT_ROOT.'/inc/logick/tester/data_receiver.php';
-  }
+
 ?>

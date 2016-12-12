@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($stencil_contents_included != '#stencil_contents_Included#') {
-    $stencil_contents_included = '#stencil_contents_Included#';
 
     global $contents_builtin_Included;
 
@@ -80,5 +78,5 @@
     function contentsc ($settings = '') {
       println (stencil_contentsc ($settings));
     }
-  }
+
 ?>

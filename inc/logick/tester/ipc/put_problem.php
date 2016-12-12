@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_ipc_put_problem_included_ != '###WT_IPC_PutProblem_Inclided###') {
-    $_WT_ipc_put_problem_included_ = '###WT_IPC_PutProblem_Inclided###';
 
     function WT_PutProblem () {
       global $id, $lid, $err, $desc;
@@ -50,5 +48,5 @@
     }
 
     ipc_register_function ('put_problem', WT_PutProblem);
-  }
+
 ?>

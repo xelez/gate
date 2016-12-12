@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($__CGMInformatics_Included__ != '##CGMInformatics_Included##') {
-    $__CGMInformatics_Included__ = '##CGMInformatics_Included##';
 
     global $INFORMATICS_problemsContainer;
     global $INFORMATICS_ProblemSettingsFields;
@@ -79,7 +77,7 @@
       var $problem_container;
 
       function CGMRulesVirtual ($lib, $problem_container) {
-        $this->lib = $lib; 
+        $this->lib = $lib;
         $this->problem_container=$problem_container;
       }
 
@@ -153,7 +151,7 @@
         $try = $row_data['try'];
 
         $actions = '';
-        $actions .= stencil_ibtnav ('detail.gif' , 
+        $actions .= stencil_ibtnav ('detail.gif' ,
                                     $full.'&action=view&id='.$row_data['id'].
                                     '&redirect='.$redirect,
                                     'Просмотреть решение');
@@ -663,7 +661,7 @@
     }
 
     ////////
-    // 
+    //
     class CGMInformatics extends CGMVirtual {
       var $rules = array ();
       var $problemsContainer;
@@ -1003,13 +1001,13 @@
         } else if ($act == 'up') {
           $this->Problem_MoveUp ($id, $pid);
         } else if ($act == 'down') {
-          $this->Problem_MoveDown ($id, $pid); 
+          $this->Problem_MoveDown ($id, $pid);
         } else if ($act == 'drop') {
-          $this->Problem_Drop ($id, $pid); 
+          $this->Problem_Drop ($id, $pid);
         } else if ($act == 'rejudge') {
           $this->Problem_Rejudge ($pid);
         } else if ($act == 'delete') {
-          $this->problemsContainer->Delete ($pid); 
+          $this->problemsContainer->Delete ($pid);
         } else if ($act == 'savegroups') {
             $this->Contest_UpdateRecievedGroupUsed ($id);
         } else if ($act == 'savecompilers') {
@@ -1159,7 +1157,7 @@
         $n = count ($ids);
 
         for ($i = 0; $i < $n; $i++) {
-          $this->problemsContainer->Delete ($ids[$i]); 
+          $this->problemsContainer->Delete ($ids[$i]);
         }
       }
 
@@ -2103,7 +2101,7 @@
       $fields = $INFORMATICS_ProblemSettingsFields;
       $arr = array ();
       $arr['desc'] = strip_suspicious (stripslashes ($_POST['desc']));
-  
+
       for ($i = 0, $n = count ($fields); $i < $n; $i++) {
         $f = $fields[$i];
         $arr[$f['name']] = FormPOSTValue ($f['postname'], 'ProblemSettings');
@@ -2178,5 +2176,5 @@
     }
 
     WT_library_register ('CGMInformatics', 'Informatics', 0);
-  }
+
 ?>

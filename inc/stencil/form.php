@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($stencil_form_included != '#stencil_form_Included#') {
-    $stencil_form_included = '#stencil_form_Included#';
 
     function stencil_formo ($settings = '') {
       global $dd_form_stuff_included, $CORE;
@@ -68,5 +66,5 @@
     function settings_formc ($back = '.', $title = 'Сохранить'){
       print (stencil_settings_formc ($back, $title));
     }
-  }  
+
 ?>

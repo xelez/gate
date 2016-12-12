@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($__WT_contest_included__ != '##WT_contents_Included##') {
-    $__WT_contest_included__ = '##WT_contents_Included##';
 
     global $gateway_content_container;
     $gateway_content_container = NULL;
@@ -399,5 +397,5 @@
 
       return '&nbsp;';
     }
-  }
+
 ?>

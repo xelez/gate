@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_ipc_reset_status_included_ != '###WT_IPC_ResetStatus_Inclided###') {
-    $_WT_ipc_reset_status_included_ = '###WT_IPC_ResetStatus_Inclided###';
 
     function WT_ResetStatus () {
       if (!WT_IPC_CheckLogin ()) {
@@ -29,5 +27,5 @@
     }
 
     ipc_register_function ('reset_status', WT_ResetStatus);
-  }
+
 ?>

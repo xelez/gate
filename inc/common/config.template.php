@@ -17,9 +17,6 @@
     die;
   }
 
-  if ($_configSet_included_ != '#configSet_Included#') {
-    $_configSet_included_ = '#configSet_Included#'; 
-
     config_set ('proto', (($_SERVER['HTTPS']!='')?('https'):('http')));
 
     // Major version of php
@@ -77,5 +74,5 @@
     config_set ('restore-timeout', 12*60*60*0);
 
     config_set ('session-lifetime', 15);
-  }
+
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CCCatalogue_Included_ != '##CCCatalogue_Included##') {
-    $_CCCatalogue_Included_ = '##CCCatalogue_Included##';
 
     class CCCatalogue extends CCVirtual {
       var $scripts = array (
@@ -28,7 +26,7 @@
 
       var $cache;
 
-      function CCCatalogue () { $this->SetClassName ('CCCatalogue'); }  
+      function CCCatalogue () { $this->SetClassName ('CCCatalogue'); }
 
       function Init ($content_id = -1, $security = NULL) {
         global $action, $id;
@@ -77,7 +75,7 @@
 
         return $arr;
       }
-    
+
       function GetCatalogueItem ($depth, $uid, $id = -1, $preparse = true) {
         $table  = $this->GetSupportTableByDepth ($depth);
         $cat_id = $this->GetCatIDByDepth ($depth);
@@ -123,7 +121,7 @@
 
       ////////
       //
-    
+
       function CatNameById ($id) {
         return db_field_value ($this->settings['content'], 'name', "`id`=$id");
       }
@@ -295,7 +293,7 @@
 
         return $arr;
       }
-    
+
       function ParseDataArr ($cat_id, $arr) {
         $n = count ($arr);
 
@@ -337,7 +335,7 @@
         $dataset->Ref ();
 
         $this->SaveSettings ();
-      
+
         return true;
       }
 
@@ -460,7 +458,7 @@
 
         db_insert ($table, $arr);
       }
-    
+
       function RollbackToCatItemID ($cat_id, $uid, $iid) {
         if (!$this->GetAllowed ('EDITINFO')) {
           return;
@@ -524,7 +522,7 @@
         $dataset->SetFieldValues ($data);
         $dataset->FreeContent ();
       }
-    
+
       function DeleteCatItem ($cat_id, $id) {
         if (!$this->GetAllowed ('DELETEINFO')) {
           return;
@@ -532,7 +530,7 @@
 
         $depth = $this->GetCatDepthByID ($cat_id);
         $data  = $this->GetCatalogueItem ($depth, -1, $id, false);
-      
+
         $this->FreeContentData ($cat_id, $data);
 
         $table = $this->GetSupportTableByCatID ($cat_id);
@@ -974,5 +972,5 @@
     }
 
     content_register_CClass ('CCCatalogue', 'Настраиваемый каталог');
-  }
+
 ?>

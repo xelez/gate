@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_image_validator_ != '###imageValidator_Included###') {
-    $_image_validator_ = '###imageValidator_Included###';
 
     function validate_image_cmpiterator ($val, $key, $field, $type, $dimension) {
       $r = smartcmp ($val, $key);
@@ -41,7 +39,7 @@
       if ($r == 'LESS') {
         return $field.' изображения меньше '.parseint ($key).' '.$dimension.'.';
       }
-    } 
+    }
 
     function validate_image ($data, $size = '', $hlimit = '', $vlimit = '') {
       $exts = array ('gif', 'jpg', 'jpeg', 'png');
@@ -82,5 +80,5 @@
         return 'Поддерживаются только следующие расширения файлов: gif, jpg, jpeg, png.';
       }
     }
-  }
+
 ?>

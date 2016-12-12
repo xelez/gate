@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_stencil_wikiPage__Included_ != '#stencil_wikiPage_Included#') {
-    $_stencil_wikiPage_Included_ = '#stencil_wikiPage_Included#';
 
     function stencil_wiki_page ($content, $tabs) {
       return tpl ('back/stencil/wiki_page',
@@ -28,5 +26,5 @@
     function wiki_page ($content, $tabs) {
       println (stencil_wiki_page ($content, $tabs));
     }
-  }
+
 ?>

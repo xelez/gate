@@ -17,9 +17,6 @@
     die;
   }
 
-  if ($_manage_dt_included_ != '#manage_dt_Included#') {
-    $_manage_dt_included_ = '#manage_dt_Included#'; 
-
     class CDataType extends CVirtual {
       var $name, $data;
 
@@ -235,5 +232,5 @@
 
       return array ();
     }
-  }
+
 ?>

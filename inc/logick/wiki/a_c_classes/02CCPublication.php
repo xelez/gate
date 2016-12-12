@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CCPublication_ != '#CCPublication_Included#') {
-    $_CCPublication_='#CCPublication_included#';
 
     class CCPublication extends CCVirtual {
       var $data, $ids, $uids, $dbids, $dbuids,$idlink;
@@ -306,7 +304,7 @@
           redirect ();
         }
       }
-    
+
       function DrawPublistEntry ($formname, $titleField, $data) {
         println ('<table class="list smb">');
         content_url_var_push_global ('function');
@@ -365,7 +363,7 @@
         global $year, $month, $day;
         return "$year-$month-$day";
       }
-    
+
       function GetYears () {
         $res = array ();
         $usage = array ();
@@ -745,7 +743,7 @@
 
         $this->ReceiveContent ();
       }
-    
+
       function Rollback ($id) {
         if (!$this->GetAllowed ('EDITINFO')) {
           return;
@@ -756,7 +754,7 @@
 
         db_update ($this->settings['content'],
                    array ('id' => $nid,
-                          'timestamp' => time (), 
+                          'timestamp' => time (),
                           'ip' => '"'.get_real_ip ().'"',
                           'user_id' => user_id ()), '`id`='.$id);
       }
@@ -910,7 +908,7 @@
         $list = $this->GetList ();
         $n = count ($list);
         $pageCount = ceil ($n/$perPage);
-      
+
         if ($perPage <= 0) {
           return $list;
         }
@@ -1079,5 +1077,5 @@
     }
 
     content_Register_CClass ('CCPublication', 'Публикация');
-  }
+
 ?>

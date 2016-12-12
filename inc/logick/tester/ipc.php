@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_ipc_included_ != '###WT_IPC_Inclided###') {
-    $_WT_ipc_included_ = '###WT_IPC_Inclided###';
 
     $dirs = array (
         '/inc/logick/tester/ipc'
@@ -34,5 +32,5 @@
         $pass1 == config_get ('WT-IPC-Pass-1') &&
         $pass2 == config_get ('WT-IPC-Pass-2');
     }
-  }
+
 ?>

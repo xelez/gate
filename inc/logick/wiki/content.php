@@ -17,9 +17,6 @@
     die;
   }
 
-  if ($_wiki_content_included_ != '#wiki_content_Included#') {
-    $_wiki_content_included_ = '#wiki_content_Included#'; 
-
     class CWikiContent extends CVirtual {
       var $name;
       var $path;
@@ -84,7 +81,7 @@
         $this->UpdateRealSecurity ();
         return $this->realSecurity;
       }
-    
+
       function Init ($id) {
         $this->security = new CSecurityInformation ();
         $this->security->Init ('security');
@@ -277,7 +274,7 @@
 
         return true;
       }
-    
+
       function Update () {
         if (!$this->GetAllowed ('EDIT')) {
           return;
@@ -332,7 +329,7 @@
 
         return true;
       }
-    
+
       function CreateReceived () {
         $this->SetName (stripslashes ($_POST['name']));
         $this->SetPath (stripslashes ($_POST['path']));
@@ -364,7 +361,7 @@
 
         return $r;
       }
-    
+
       function Destroy () {
         if (!$this->GetAllowed ('DELETE')) {
           return;
@@ -392,17 +389,17 @@
       function GetName () { return $this->name; }
       function GetPath () { return $this->path; }
       function GetSecurityInformation () { return $this->security; }
-    
+
       function SetName ($v) { $this->name = $v; }
       function SetPath ($v) { $this->path = $v; }
-    
+
       function Up () {
         db_move_up ('content', $this->id, '`pid`='.$this->pId);
       }
       function Down () {
         db_move_down ('content', $this->id, '`pid`='.$this->pId);
       }
-    
+
       //////
       // Content creating&editing stuff
       // Draw the settings form
@@ -438,7 +435,7 @@
 
         return $this->GetAllowedToUser (user_id (), $action);
       }
-    
+
       // Links to data
       function Editor_DrawContent ($vars = array ()) {
         if ($this->GetAllowed ('READ')) {
@@ -537,7 +534,7 @@
       }
       return $arr;
     }
-  
+
     function wiki_content_up ($id) {
       $c = wiki_spawn_content ($id);
       $c->Up ();
@@ -546,7 +543,7 @@
       $c = wiki_spawn_content ($id);
       $c->Down ();
     }
-  
+
     function wiki_content_rec ($id, &$res) {
       if ($id <= 1) {
         return '';
@@ -572,7 +569,7 @@
     function wiki_content_exists ($id) {
       return db_count ('content', "`id`=$id") > 0;
     }
-  
+
     function wiki_content_in_node ($nid, $cid) {
       $r = db_row_value ('content', "`id`=$cid");
       for (;;) {
@@ -589,7 +586,7 @@
 
       return false;
     }
-  
+
     function wiki_content_set_parent ($src, $dst) {
       if (!wiki_content_exists ($src)) {
         return false;
@@ -602,5 +599,5 @@
       $c = wiki_spawn_content ($src);
       $c->SetParent ($dst);
     }
-  }
+
 ?>

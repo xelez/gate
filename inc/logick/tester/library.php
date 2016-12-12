@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_library_included_ != '##WT_library_Included##') {
-    $_WT_library_included_ != '##WT_library_Included##';
 
     global $WT_library_container;
     $WT_library_container = NULL;
@@ -100,5 +98,5 @@
     function WT_receive_library_from_selector ($name = '') {
       return $_POST[$name.'_lib_selector'];
     }
-  }
+
 ?>

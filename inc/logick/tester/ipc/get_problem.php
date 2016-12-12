@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_ipc_get_problem_included_ != '###WT_IPC_GetProblem_Inclided###') {
-    $_WT_ipc_get_problem_included_ = '###WT_IPC_GetProblem_Inclided###';
 
     function WT_GetProblem () {
       global $lid;
@@ -45,7 +43,7 @@
       $arr = array ();
 
       $arr['ID'] = $r['id'];
-    
+
       if (isset ($s['filename'])) {
         $arr['FILENAME'] = $s['filename'];
       }
@@ -58,5 +56,5 @@
     }
 
     ipc_register_function ('get_problem', WT_GetProblem);
-  }
+
 ?>

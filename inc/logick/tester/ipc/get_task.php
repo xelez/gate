@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_ipc_get_task_included_ != '###WT_IPC_GetTask_Inclided###') {
-    $_WT_ipc_get_task_included_ = '###WT_IPC_GetTask_Inclided###';
 
     function WT_GetTask () {
       global $id, $lid;
@@ -63,7 +61,7 @@
         $arr['ACM'] = 'FALSE';
       }
 
-      // Problem's passed settings    
+      // Problem's passed settings
       $prpars = unserialize ($problem['settings']);
       $arr['TIMELIMIT']   = $prpars['timelimit'];
       $arr['MEMORYLIMIT'] = $prpars['memorylimit'];
@@ -76,5 +74,5 @@
     }
 
     ipc_register_function ('get_task', WT_GetTask);
-  }
+
 ?>

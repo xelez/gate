@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_config_compilers_included_ != '###WT_config_compilers_included###') {
-    $_WT_config_compilers_included_ != '###WT_config_compilers_included###';
 
     global $WT_Compilers;
 
@@ -29,5 +27,5 @@
       array ('title' => 'Borland Delphi for Linux 14.5', 'id' => 'DCC'),
       array ('title' => 'Sun Java',                      'id' => 'Java'),
      );
-  }
+
 ?>

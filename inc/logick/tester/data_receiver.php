@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_datareceiver_included_ != '###WT_DataReceiver_Inclided###') {
-    $_WT_datareceiver_included_ = '###WT_DataReceiver_Inclided###';
 
     function WT_CleanupIPCCacheStorage ($storage) {
       global $XPFS;
@@ -82,5 +80,5 @@
 
       return $res;
     }
-  }
+
 ?>

@@ -17,12 +17,10 @@
     die;
   }
 
-  if ($_parsers_included_ != '#_parsers_Included_#') {
-    $_parsers_included_ = '#_parsers_Included_#';
 
     require_once $DOCUMENT_ROOT.'/inc/stuff/fakecode.php';
 
-    $VARS = null;  
+    $VARS = null;
 
     // Strip da suspicious code
     function strip_suspicious ($s) {
@@ -99,5 +97,5 @@
 
       return preg_replace ($search, $replace, $s);
     }
-  }
+
 ?>

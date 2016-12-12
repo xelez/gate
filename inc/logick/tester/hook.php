@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_hook_included_ != '##WT_Hook_Included##') {
-    $_WT_hook_included_ = '##WT_Hook_Included##';
 
     $WT_on_user_delete = function ($user_id) {
       /* util.php is not included set, so we need this stupid code here */
@@ -39,5 +37,5 @@
 
     hook_register ('CORE.Security.OnUserDelete',  $WT_on_user_delete);
     hook_register ('CORE.Security.OnGroupDelete', $WT_on_group_delete);
-  }
+
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_hanlder_included_ != '#handler_Included#') {
-    $_hanlder_included_ = '#handler_Included#';
 
     $handlers = array ();
 
@@ -60,5 +58,5 @@
       $res .= ')';
       return $res;
     }
-  }
+
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CSCVirtual_included_ != '#CSCVirtual_Included#') {
-    $_CSCVirtual_included_='#CSCVirtual_Included#';
 
     class CSCVirtual extends CVirtual {
       var $sName, $id;
@@ -47,5 +45,5 @@
         db_update ('service', array ('settings'=>"\"$settings\""), '`id`='.$this->id);
       }
     }
-  }
+
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_stuff_mail_included_ != '##Mail_Included##') {
-    $_stuff_mail_included_ = '##Mail_Included##';
 
     function sendmail ($addr, $subject, $body) {
       global $DOCUMENT_ROOT;
@@ -37,5 +35,5 @@
       $src=tpl ('back/mail/'.$tpl, $params);
       sendmail ($addr, $subject, $src);
     }
-  }
+
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($__CGMVirtual_Included__ != '##CGMVirtual_Included##') {
-    $__CGMVirtual_Included__ = '##CGMVirtual_Included##';
 
     class CGMVirtual extends CVirtual {
 
@@ -110,12 +108,12 @@
         // For da correct caching
         $ccnt->UpdateCompilers ($id, $arr);
       }
-    
+
       function AppendQuickLink ($cpt, $url) {
         $this->gateway->AppendQuickLink ($cpt, $url);
       }
 
       function Subnav_Info () { return ''; }
     }
-  }
+
 ?>

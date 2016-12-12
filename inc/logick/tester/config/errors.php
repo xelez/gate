@@ -17,11 +17,9 @@
     die;
   }
 
-  if ($_WT_config_errors_included_ != '###WT_config_errors_included###') {
-    $_WT_config_errors_included_ != '###WT_config_errors_included###';
 
     global $WT_errors;
-  
+
     $WT_errors=array (
       'CE' => 'Ошибка компиляции',
       'TL' => 'Превышен предел времени',
@@ -43,5 +41,5 @@
             'RE' => 'a[-1] := 1 / 0',
             'WA' => 'Упс!'*/
                       );
-  }
+
 ?>

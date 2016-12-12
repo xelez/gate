@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CDCCheckBox_ != '#CDCCheckBox_included#') {
-    $_CDCCheckBox_ = '#CDCCheckoBox_included#';
 
     class CDCCheckBox extends CDCVirtual {
       function CDCCheckBox () { $this->SetClassName ('CDCCheckBox'); }
@@ -54,5 +52,5 @@
     }
 
     content_Register_DCClass ('CDCCheckBox', 'Флажок');
-  }
+
 ?>

@@ -25,7 +25,7 @@
     function iframe_include_stuff () {
       global $iframe_stuff_included, $CORE;
 
-      if ($iframe_stuff_included) {
+      if (!empty($iframe_stuff_included)) {
         return;
       }
 

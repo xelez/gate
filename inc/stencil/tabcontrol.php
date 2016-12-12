@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_stencil_tabcontrol__Included_ != '#stencil_tabcontrol_Included#') {
-    $_stencil_tabcontrol_Included_ = '#stencil_tabcontrol_Included#';
 
     global $tabctrl_stuff_included;
 
@@ -47,6 +45,6 @@
     }
 
     function tabo ($s)      { println (stencil_tabo ($s)); }
-    function tabc ($s = '') { println (stencil_tabc ($s)); }  
-  }
+    function tabc ($s = '') { println (stencil_tabc ($s)); }
+
 ?>

@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($stencil_button_included != '#stencil_button_Included#') {
-    $stencil_button_included = '#stencil_button_Included#';
 
     function stencil_block_button ($caption, $onclick = 'dn();',
                                    $title = '', $float = false) {
@@ -27,7 +25,7 @@
         (($title!='')?(' title="'.htmlspecialchars ($title).'"'):('')).
         '><a href="JavaScript:'.$onclick.'">'.$caption.'</a></div>';
     }
-  
+
     function stencil_block_img_button ($img,  $onclick = 'dn();',
                                        $title = '', $float = false) {
       return stencil_block_button ('<img src="'.config_get ('document-root').
@@ -55,7 +53,7 @@
                                 $suffix = '') {
       $res = '';
       $s = (($suffix!='')?((($suffix[0]=='#')?(''):('&')).$suffix):(''));
-      
+
       if ($url[strlen ($url)-1]=='.' ||
           $url[strlen ($url)-1]=='/') {
         $url.='?';
@@ -103,5 +101,5 @@
       println (stencil_updownbtn ($num, $count, $id, $url,
                                   $idcode, $actcode, $suffix));
     }
-  }
+
 ?>

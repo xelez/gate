@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CVCRegnum_ != '#CVCRegnum_Included#') {
-    $_CVCContent_ = '#CVCRegnum_Included#';
 
     class CVCTagCloud extends CVCVirtual {
       var $tags = array ();
@@ -56,5 +54,5 @@
     }
 
     content_Register_VCClass ('CVCTagCloud');
-  }
+
 ?>

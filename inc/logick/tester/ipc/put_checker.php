@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_ipc_put_checker_included_ != '###WT_IPC_PutChecker_Inclided###') {
-    $_WT_ipc_put_checker_included_ = '###WT_IPC_PutChecker_Inclided###';
 
     function WT_PutChecker () {
       global $id, $err, $desc;
@@ -44,5 +42,5 @@
     }
 
     ipc_register_function ('put_checker', WT_PutChecker);
-  }
+
 ?>

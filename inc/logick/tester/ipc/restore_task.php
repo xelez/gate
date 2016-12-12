@@ -17,16 +17,14 @@
     die;
   }
 
-  if ($_WT_ipc_restore_task_included_ != '###WT_IPC_RestoreTask_Inclided###') {
-    $_WT_ipc_restore_task_included_ = '###WT_IPC_RestoreTask_Inclided###';
 
     function WT_RestoreTask () {
       global $id, $lid;
-  
+
       if (!WT_IPC_CheckLogin ()) {
         return;
       }
-    
+
       if (!isset ($id) || !isset ($lid)) {
         print ('Void filename for WT_RestoreTask');
         return;
@@ -38,5 +36,5 @@
     }
 
     ipc_register_function ('restore_task', WT_RestoreTask);
-  }
+
 ?>

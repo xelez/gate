@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_CMHeadTag_ != '#CMHeadTag_Included#') {
-    $_CMHeadTag_ = '#CMMeta_Included#';
 
     class CMHeadTag extends CMVirtual {
       var $tag;
@@ -56,5 +54,5 @@
     }
 
     content_Register_MCClass ('CMHeadTag');
-  }
+
 ?>

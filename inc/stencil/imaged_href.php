@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($stencil_imagedHref_included != '#stencil_imagedHref_Included#') {
-    $stencil_imagedHref_included = '#stencil_imagedHref_Included#';
 
     function stencil_imaged_href ($title, $href, $img) {
       return tpl ('back/stencil/imaged_href',
@@ -66,5 +64,5 @@
     function cbimage ($img, $onclick, $title = '') {
       println (stencil_cbimage ($img, $onclick, $title));
     }
-  }
+
 ?>

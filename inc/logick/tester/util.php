@@ -17,8 +17,6 @@
     die;
   }
 
-  if ($_WT_util_included_ != '###WT_UTIL_Inclided###') {
-    $_WT_util_included_ = '###WT_UTIL_Inclided###';
 
     function WT_errors_string ($errors, $force,
                                $first_abort = false, $summary = '') {
@@ -115,5 +113,5 @@
       $s = preg_replace ('/^(OK)/', '<b>[<font style="color: #007f00">\1</font>]</b>', $s);
       return $s;
     }
-  }
+
 ?>

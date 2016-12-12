@@ -44,7 +44,7 @@
       function DrawLimits ($field, $suff) {
         global $image_contentSettingsform_stuff_included;
 
-        if (!$image_contentSettingsform_stuff_included) {
+        if (empty($image_contentSettingsform_stuff_included)) {
           println ('<script language="JavaScript" type="text/javascript">
               function img_updateLimits (name, suff) {
                 var limit=getElementById ("cntset_"+name+"_"+suff).value;
