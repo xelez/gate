@@ -10,11 +10,6 @@
    * See the file COPYING.
    */
 
-  if ($_SERVER['PHP_SELF']!='') {
-    print 'HACKERS?';
-    die;
-  }
-
   global $login, $passwd, $redirect;
   $authorized = false;
 
