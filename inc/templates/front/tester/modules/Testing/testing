@@ -1,5 +1,4 @@
 <?php
-  global $WT_contest_id;
 
   $lib = targ ('lib');
   $data = targ ('data');
@@ -130,7 +129,7 @@
       $s['started'] = 0;
       $s['tasks'] = $tasks;
 
-      db_insert ('tester_solutions', array ('lid' => 1, 'contest_id' => $WT_contest_id,
+      db_insert ('tester_solutions', array ('lid' => 1, 'contest_id' => WT_contest_id(),
                                             'user_id' => user_id (), 'timestamp' => time (),
                                             'status' => 2, 'parameters' => db_string (serialize ($s))));
 

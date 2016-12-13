@@ -1,10 +1,9 @@
 <?php
-  global $WT_contest_id;
-  $lib = targ ('lib');
-  $data = $lib->GetUserSolutions ($WT_contest_id, user_id ());
+    $lib = targ ('lib');
+  $data = $lib->GetUserSolutions (WT_contest_id(), user_id ());
   $n = count ($data);
 
-  $rules = $lib->SpawnRulesLib ($WT_contest_id);
+  $rules = $lib->SpawnRulesLib (WT_contest_id());
 
   if ($n <= 0) {
     println ('<span class="contentSub2">На этот контест вы еще не сдавали задач.</span>');
@@ -25,7 +24,7 @@
       $pageSrc = '<table class="list" width="100%">'."\n";
       $pageSrc .= '  '.$rules->GetStatusHeader ();
       while ($c < $perPage && $i < $n) {
-        $pageSrc .= '  '.$rules->GetStatusRow ($WT_contest_id, $data[$i], $n, $i, $perPage, $full)."\n";
+        $pageSrc .= '  '.$rules->GetStatusRow (WT_contest_id(), $data[$i], $n, $i, $perPage, $full)."\n";
         $i++;
         $c++;
       }

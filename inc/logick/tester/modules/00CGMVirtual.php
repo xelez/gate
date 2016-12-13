@@ -57,10 +57,9 @@
       }
 
       function GetUsersAtContest ($contest_id = -1) {
-        global $WT_contest_id;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         return arr_from_query ('SELECT `u`.`id`, `u`.`name` '.
@@ -74,10 +73,9 @@
       }
 
       function GetJudgesAtContest ($contest_id = -1) {
-        global $WT_contest_id;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         return arr_from_query ('SELECT `u`.`id`, `u`.`name` '.
@@ -91,10 +89,9 @@
       }
 
       function GetProblemsAtContest ($contest_id = -1) {
-        global $WT_contest_id;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         return arr_from_query ('SELECT * FROM `tester_tasks` '.

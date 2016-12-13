@@ -1,5 +1,5 @@
 <?php
-  global $page, $WT_contest_id;
+  global $page;
 
   $data = targ ('data');
   $lib = targ ('lib');

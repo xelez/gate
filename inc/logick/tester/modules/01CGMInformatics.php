@@ -113,12 +113,12 @@
 
       function SolutionsRow ($contest_id, $row_data, $n, $c,
                              $perPage, $full, $acl) {
-        global $id, $WT_contest_id;
+        global $id;
 
         $class = '';
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         $contest = WT_contest_by_id ($contest_id);
@@ -237,10 +237,10 @@
       }
 
       function Monitor ($contest_id = -1) {
-        global $WT_contest_id, $CORE;
+        global $CORE;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         $this->lib->InsertTemplate ('monitor.acm',
@@ -293,10 +293,10 @@
       }
 
       function Monitor ($contest_id = -1) {
-        global $WT_contest_id, $CORE;
+        global $CORE;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         $this->lib->InsertTemplate ('monitor.kirov',
@@ -561,7 +561,7 @@
 
       function UpdateTasksCache ($contest_id, $problem_id) {
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         if (isset ($this->cache['tasks'][$contest_id])) {
@@ -575,10 +575,9 @@
       }
 
       function GetProblemLetter ($contest_id, $problem_id) {
-        global $WT_contest_id;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         if (isset ($this->cache['letters'][$contest_id][$problem_id])) {
@@ -713,10 +712,9 @@
       }
 
       function SpawnRulesLib ($contest_id = -1) {
-        global $WT_contest_id;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         $c = WT_contest_by_id ($contest_id);
@@ -823,10 +821,9 @@
       }
 
       function GetProblemsAtContest ($contest_id = -1) {
-        global $WT_contest_id;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         $q = db_select ('tester_tasks', array ('*'),
@@ -1034,14 +1031,13 @@
       }
 
       function Contest_UpdateRecievedCompilers ($id = -1) {
-        global $WT_contest_id;
 
         if (!$this->GetAllowed ('CONTEST.MANAGE')) {
           return;
         }
 
         if ($id < 0) {
-          $id = $WT_contest_id;
+          $id = WT_contest_id();
         }
 
         $list = WT_compiler_list ();
@@ -1057,10 +1053,9 @@
       }
 
       function Contest_UpdateRecievedGroupUsed_Iterator ($id = -1, $name, $table) {
-        global $WT_contest_id;
 
         if ($id < 0) {
-          $id = $WT_contest_id;
+          $id = WT_contest_id();
         }
 
         $list = new CVCAppendingList ();
@@ -1095,7 +1090,7 @@
 
       function Contest_GetUserGroup_Iterator ($id, $table) {
         if ($id < 0) {
-          $id = $WT_contest_id;
+          $id = WT_contest_id();
         }
 
         $q = db_select ($table, array ('group_id'), "`contest_id`=$id");
@@ -1242,10 +1237,9 @@
       }
 
       function Problem_Accessible ($problem_id, $contest_id = -1) {
-        global $WT_contest_id;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         // TODO:
@@ -1262,10 +1256,9 @@
 
       function Problem_AccessibleForSubmit ($problem_id, $user_id,
                                             $silent = true, $contest_id = -1) {
-        global $WT_contest_id;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         $manage = $this->IsContestJudge ();
@@ -1479,17 +1472,15 @@
       }
 
       function Problem_Accepted ($id) {
-        global $WT_contest_id;
-        $user_id = user_id ();
-        return db_count ('tester_solutions', "(`contest_id`=$WT_contest_id) ".
+                $user_id = user_id ();
+        return db_count ('tester_solutions', "(`contest_id`=WT_contest_id()) ".
                          "AND (`user_id`=$user_id) AND (`problem_id`=$id) ".
                          "AND (`errors`='OK') AND (`status`=2)");
       }
 
       function Problem_Tried ($id) {
-        global $WT_contest_id;
-        $user_id = user_id ();
-        return db_count ('tester_solutions', "(`contest_id`=$WT_contest_id) ".
+                $user_id = user_id ();
+        return db_count ('tester_solutions', "(`contest_id`=WT_contest_id()) ".
                          "AND (`user_id`=$user_id) AND (`problem_id`=$id) ".
                          "AND (`status`=2)");
       }
@@ -1619,10 +1610,9 @@
       }
 
       function GetSolutionsCountEntry ($contest_id = -1, $clause = '') {
-        global $WT_contest_id;
 
         if ($contest_id = -1) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         return db_count ('tester_solutions',
@@ -1635,10 +1625,9 @@
       }
 
       function GetAllSolutions ($contest_id = -1) {
-        global $WT_contest_id;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         return $this->GetSolutionsEntry ($contest_id);
@@ -1657,14 +1646,14 @@
       // Pages
 
       function PAGE_Problems () {
-        global $WT_contest_id, $act, $id, $CORE;
+        global $act, $id, $CORE;
 
         $this->gateway->AppendNavigation ('Список задач', '.?page=problems');
 
         $manage = $this->IsContestJudge ();
 
-        if (!WT_contest_running ($WT_contest_id) &&
-            !WT_contest_finished ($WT_contest_id) && !$manage) {
+        if (!WT_contest_running (WT_contest_id()) &&
+            !WT_contest_finished (WT_contest_id()) && !$manage) {
           $this->CPrintLn ('<span class="contentSub2">Список задач '.
                            'недоступен, так как контест незапущен.</span>');
           return;
@@ -1677,7 +1666,7 @@
 
         if ($this->GetAllowed ('CONTEST.MANAGE')) {
           $this->AppendQuickLink ('Редактировать контест',
-                                  '?page=contest&action=manage&id='.$WT_contest_id);
+                                  '?page=contest&action=manage&id='.WT_contest_id());
         }
 
         if ($this->GetAllowed ('PROBLEMS.CREATE')) {
@@ -1688,15 +1677,14 @@
       }
 
       function PAGE_Monitor () {
-        global $WT_contest_id;
 
         //
         // TODO:
         //  Add checinkg stuff here
         //
 
-        if (!WT_contest_running ($WT_contest_id) &&
-            !WT_contest_finished ($WT_contest_id) && !$this->IsContestJudge ()) {
+        if (!WT_contest_running (WT_contest_id()) &&
+            !WT_contest_finished (WT_contest_id()) && !$this->IsContestJudge ()) {
           return;
         }
 
@@ -1711,18 +1699,18 @@
       }
 
       function PAGE_Submit () {
-        global $action, $WT_contest_id;
+        global $action;
 
         $manage = $this->IsContestJudge ();
         redirector_add_skipvar ('action', 'submit');
 
-        $contest = WT_contest_by_id ($WT_contest_id);
+        $contest = WT_contest_by_id (WT_contest_id());
 
         if ($action == 'submit') {
           $url = content_url_get_full ();
           if ($contest['settings']['compilers'][WT_receive_compiler_from_selector ()]) {
             if ($this->Problem_AccessibleForSubmit ($_POST['problem_id'], user_id (), false)) {
-              if ($this->PutSolution ($WT_contest_id, user_id (), $_POST['problem_id'],
+              if ($this->PutSolution (WT_contest_id(), user_id (), $_POST['problem_id'],
                                       WT_receive_compiler_from_selector (),
                                       stripslashes ($_POST['src']))) {
                 redirect ($url);
@@ -1733,9 +1721,9 @@
 
         $this->gateway->AppendNavigation ('Посылка решения задачи', '.?page=submit');
 
-        if (WT_contest_running ($WT_contest_id) || $manage) {
+        if (WT_contest_running (WT_contest_id()) || $manage) {
           $this->CPrintLn (stencil_formo ());
-          $list = $this->GetProblemsAtContest ($WT_contest_id);
+          $list = $this->GetProblemsAtContest (WT_contest_id());
           $this->InsertTemplate ('submit_form', array ('list' => $list,
                                                        'contest' => $contest,
                                                        'data' => $this));
@@ -1744,11 +1732,11 @@
       }
 
       function PAGE_Status () {
-        global $WT_contest_id, $action, $id;
+        global $action, $id;
         $manage = $this->IsContestJudge ();
 
-        if (!WT_contest_running ($WT_contest_id) &&
-            !WT_contest_finished ($WT_contest_id) && !$manage) {
+        if (!WT_contest_running (WT_contest_id()) &&
+            !WT_contest_finished (WT_contest_id()) && !$manage) {
           $this->CPrintLn ('<span class="contentSub2">Список задач '.
                            'недоступен, так как контест незапущен.</span>');
           return;
@@ -1918,7 +1906,7 @@
       }
 
       function PAGE_Solutions () {
-        global $pageid, $WT_contest_id;
+        global $pageid;
 
         redirector_add_skipvar ('action');
         redirector_add_skipvar ('id');
@@ -1951,12 +1939,11 @@
       }
 
       function InitIface () {
-        global $WT_contest_id;
 
         $manage = $this->IsContestJudge ();
-        $started = WT_contest_running ($WT_contest_id);
-        $finished = WT_contest_finished ($WT_contest_id);
-        $c = $this->GetProblemsCountAtContest ($WT_contest_id);
+        $started = WT_contest_running (WT_contest_id());
+        $finished = WT_contest_finished (WT_contest_id());
+        $c = $this->GetProblemsCountAtContest (WT_contest_id());
 
         if (WT_contest_running () || WT_contest_finished () ||
             $this->IsContestJudge ()) {
@@ -1970,7 +1957,7 @@
         }
 
         if (($started || $finished || $manage) &&
-            $this->GetUserSolutionsCount ($WT_contest_id, user_id ())) {
+            $this->GetUserSolutionsCount (WT_contest_id(), user_id ())) {
           $this->gateway->AppendMainMenuItem ('Статус', '.?page=status', 'status');
         }
 
@@ -1981,7 +1968,7 @@
         }
 
         if ($this->GetAllowed ('SOLUTIONS.MANAGE') &&
-            $this->GetAllSolutionsCount ($WT_contest_id)) {
+            $this->GetAllSolutionsCount (WT_contest_id())) {
           $this->gateway->AppendMainMenuItem ('Решения участников',
                                               '.?page=solutions',
                                               'solutions');
@@ -2001,10 +1988,9 @@
       }
 
       function IsContestJudge ($id=-1) {
-        global $WT_contest_id;
 
         if ($id < 0) {
-          $id = $WT_contest_id;
+          $id = WT_contest_id();
         }
 
         if (isset ($this->cache[$id]['IsContestJudge'])) {
@@ -2034,22 +2020,18 @@
       }
 
       function Subnav_Info () {
-        global $WT_contest_id;
+        if (WT_contest_id() < 0)
+          return '';
 
-        if (!isset ($WT_contest_id) || $WT_contest_id == '') {
-          return;
-        }
-
-        $data = WT_contest_by_id ($WT_contest_id);
+        $data = WT_contest_by_id (WT_contest_id());
         return $this->Template ('subnav_info',
                                 array ('data' => $data, 'lib' => $this));
       }
 
       function GetLastAcceptedAtContest ($id = 1) {
-        global $WT_contest_id;
 
         if ($id < 0) {
-          $id = $WT_contest_id;
+          $id = WT_contest_id();
         }
 
         $s = WT_contest_by_id ($id);

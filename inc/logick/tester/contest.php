@@ -342,6 +342,12 @@
       return $lib->Contest_ClearManagerCaption ($id);
     }
 
+    function WT_contest_id() {
+      if (empty($_SESSION['WT_contest_id']))
+        return -1;
+      return $_SESSION['WT_contest_id'];
+    }
+
     function WT_contest_by_id ($id = -1) {
       $cnt = WT_spawn_new_contest_container ();
       return $cnt->ContestById ($id);

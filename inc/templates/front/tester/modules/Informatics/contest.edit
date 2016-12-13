@@ -1,5 +1,4 @@
 <?php
-  global $WT_contest_id;
 
   if (browser_engine () != 'DONKEY') {
     print ('<div id="editor" style="margin-top: -6px; padding-top: 6px;">');
@@ -13,7 +12,7 @@
 
   $lib = targ ('lib');
   $rules = $lib->GetRules ();
-  $cur_data = wt_contest_by_id ($WT_contest_id);
+  $cur_data = wt_contest_by_id (WT_contest_id());
 
   // General settings form
   $f = new CVCForm ();

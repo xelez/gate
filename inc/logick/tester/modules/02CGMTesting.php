@@ -244,12 +244,11 @@
       }
 
       function InitIface () {
-        global $WT_contest_id;
-        $judge = $this->IsContestJudge ();
+                $judge = $this->IsContestJudge ();
         $running = WT_contest_running ();
         $manage = $this->GetAllowed ('CONTEST.MANAGE');
-        $started = WT_contest_running ($WT_contest_id);
-        $finished = WT_contest_finished ($WT_contest_id);
+        $started = WT_contest_running (WT_contest_id());
+        $finished = WT_contest_finished (WT_contest_id());
 
         if (($judge || $running || $manage) && ($this->Test_Obtained () ||
                                                 $this->Test_CanObtain ())) {
@@ -258,12 +257,12 @@
         }
 
         if (($started || $finished || $manage) &&
-            $this->GetUserSolutionsCount ($WT_contest_id, user_id ())) {
+            $this->GetUserSolutionsCount (WT_contest_id(), user_id ())) {
           $this->gateway->AppendMainMenuItem ('Статус', '.?page=status', 'status');
         }
 
         if ($this->GetAllowed ('SOLUTIONS.MANAGE') &&
-            $this->GetAllSolutionsCount ($WT_contest_id))
+            $this->GetAllSolutionsCount (WT_contest_id()))
           $this->gateway->AppendMainMenuItem ('Решения участников',
                                               '.?page=solutions',
                                               'solutions');
@@ -281,7 +280,7 @@
 
       function Contest_GetUserGroup_Iterator ($id, $table) {
         if ($id < 0) {
-          $id = $WT_contest_id;
+          $id = WT_contest_id();
         }
 
         $q = db_select ($table, array ('group_id'), "`contest_id`=$id");
@@ -303,10 +302,9 @@
       }
 
       function Contest_UpdateRecievedGroupUsed_Iterator ($id, $name, $table) {
-        global $WT_contest_id;
 
         if ($id < 0) {
-          $id = $WT_contest_id;
+          $id = WT_contest_id();
         }
 
         $list = new CVCAppendingList ();
@@ -456,14 +454,13 @@
       }
 
       function Contest_UpdateRecievedCompilers ($id = -1) {
-        global $WT_contest_id;
 
         if (!$this->GetAllowed ('CONTEST.MANAGE')) {
           return;
         }
 
         if ($id < 0) {
-          $id = $WT_contest_id;
+          $id = WT_contest_id();
         }
 
         $list = WT_compiler_list ();
@@ -480,10 +477,9 @@
       }
 
       function Categories_Get ($contest_id = -1) {
-        global $WT_contest_id;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         return arr_from_query ('SELECT * FROM `tester_categories` '.
@@ -492,14 +488,14 @@
       }
 
       function Categories_Add ($contest_id = -1) {
-        global $name, $WT_contest_id;
+        global $name;
 
         if (!$this->GetAllowed ('CONTEST.MANAGE')) {
           return;
         }
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         $name = stripslashes ($name);
@@ -515,7 +511,7 @@
         }
 
         $order = db_max ('tester_categories', 'order',
-                         '`contest_id`='.$WT_contest_id) + 1;
+                         '`contest_id`='.WT_contest_id()) + 1;
 
         db_insert ('tester_categories', array ('name' => db_string (htmlspecialchars ($name)),
                                                'contest_id' => $contest_id,
@@ -566,15 +562,14 @@
       //
 
       function Problems_Create ($contest_id, $catid) {
-        global $WT_contest_id;
-        global $anstype, $anscount;
+                global $anstype, $anscount;
 
         if (!$this->GetAllowed ('CONTEST.MANAGE')) {
           return;
         }
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         $name = stripslashes (FormPOSTValue ('name', 'ProblemSettings'));
@@ -665,10 +660,10 @@
       }
 
       function Problems_GetAll ($contest_id = -1) {
-        global $WT_contest_id, $WT_TESTING_Cache;
+        global $WT_TESTING_Cache;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         if (isset ($WT_TESTING_Cache['AllProblems'][$contest_id])) {
@@ -743,7 +738,7 @@
 
       function PAGE_Solutions () {
         global $CORE;
-        global $pageid, $WT_contest_id;
+        global $pageid;
 
         if (!$this->GetAllowed ('SOLUTIONS.MANAGE')) return;
 
@@ -764,11 +759,11 @@
       }
 
       function PAGE_Status () {
-        global $WT_contest_id, $action, $id;
+        global $action, $id;
         $manage=$this->IsContestJudge ();
 
-        if (!WT_contest_running ($WT_contest_id) &&
-            !WT_contest_finished ($WT_contest_id) && !$manage) {
+        if (!WT_contest_running (WT_contest_id()) &&
+            !WT_contest_finished (WT_contest_id()) && !$manage) {
           content_unavaliable ();
           return;
         }
@@ -834,10 +829,9 @@
       }
 
       function GetSolutionsCountEntry ($contest_id = -1, $clause = '') {
-        global $WT_contest_id;
 
         if ($contest_id = -1) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         return db_count ('tester_solutions', "`contest_id`=$contest_id".(($clause!='')?(' AND '.$clause):(''))."");
@@ -848,10 +842,9 @@
       }
 
       function GetAllSolutions ($contest_id = -1) {
-        global $WT_contest_id;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         return $this->GetSolutionsEntry ($contest_id);
@@ -869,10 +862,9 @@
       //
 
       function IsContestJudge ($id = -1) {
-        global $WT_contest_id;
 
         if ($id < 0) {
-          $id = $WT_contest_id;
+          $id = WT_contest_id();
         }
 
         if (isset ($this->cache[$id]['IsContestJudge'])) {
@@ -905,10 +897,10 @@
       //
 
       function Test_Obtained ($contest_id = -1, $user_id = -1) {
-        global $WT_contest_id, $WT_TESTING_Cache;
+        global $WT_TESTING_Cache;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         if ($user_id < 0) {
@@ -947,10 +939,9 @@
       }
 
       function Test_CanObtain ($contest_id = -1, $user_id = -1) {
-        global $WT_contest_id;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         if ($user_id < 0) {
@@ -973,10 +964,9 @@
       }
 
       function Test_CheckTimers ($r, $contest_id = -1) {
-        global $WT_contest_id;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         if ($r['parameters']['started']) {
@@ -1009,10 +999,10 @@
       }
 
       function Test_GetCurrent ($contest_id = -1, $user_id = -1) {
-        global $WT_contest_id, $WT_TESTING_Cache;
+        global $WT_TESTING_Cache;
 
         if ($contest_id < 0) {
-          $contest_id = $WT_contest_id;
+          $contest_id = WT_contest_id();
         }
 
         if ($user_id < 0) {
@@ -1042,13 +1032,12 @@
       ////
       //
       function Subnav_Info () {
-        global $WT_contest_id;
 
-        if (!isset ($WT_contest_id) || $WT_contest_id == '') {
-          return;
+        if (WT_contest_id() < 0){
+          return '';
         }
 
-        $data = WT_contest_by_id ($WT_contest_id);
+        $data = WT_contest_by_id (WT_contest_id());
         return $this->Template ('subnav_info',
                                 array ('data' => $data, 'lib' => $this));
       }

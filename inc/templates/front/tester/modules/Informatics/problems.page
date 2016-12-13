@@ -1,9 +1,9 @@
 <?php
-  global $CORE, $WT_contest_id, $act, $id, $redirect;
+  global $CORE, $act, $id, $redirect;
   $lib = targ ('lib');
 
   $full = content_url_get_full ();
-  $arr = $lib->GetProblemsAtContest ($WT_contest_id);
+  $arr = $lib->GetProblemsAtContest (WT_contest_id());
   $n = count ($arr);
 
   $CORE->AddStyle ('tagcloud');
@@ -11,7 +11,7 @@
   if ($n == 0) {
     println ('<span class="contentSub2">Нет задач для просмотра</span>');
   } else {
-    $c = WT_contest_by_id ($WT_contest_id);
+    $c = WT_contest_by_id (WT_contest_id());
     $j = $lib->IsContestJudge ();
     if ($c['settings']['archive']!='' && (!$c['settings']['archive.blocked'] || $j)) {
       if ($j) {
@@ -42,7 +42,7 @@ function show_desc (id) {
 
   setForceURL (document_root+'/tester/?page=problems&act=view&id='+id<?=(($redirect!='')?('+\'&redirect='.urlencode ($redirect).'\''):(''));?>);
 
-  CONTENT_open (getElementById ('problemDescBrowser'), '/tester/?ipc=get_problem_desc&cid=<?=$WT_contest_id;?>&id='+id+
+  CONTENT_open (getElementById ('problemDescBrowser'), '/tester/?ipc=get_problem_desc&cid=<?=WT_contest_id();?>&id='+id+
     '&backlink=<?=$redirect;?>');
 }
 
@@ -236,7 +236,7 @@ function show_desc (id) {
     }
 
     $dis = array ();
-    $q = db_select ('tester_disabled_problems', array ('problem_id'), '`contest_id`='.$WT_contest_id);
+    $q = db_select ('tester_disabled_problems', array ('problem_id'), '`contest_id`='.WT_contest_id());
     while ($r = db_row ($q)) {
       $dis[$r['problem_id']] = true;
     }

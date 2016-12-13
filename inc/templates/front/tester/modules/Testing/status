@@ -1,7 +1,6 @@
 <?php
-  global $WT_contest_id;
-  $lib = targ ('lib');
-  $data = $lib->GetUserSolutions ($WT_contest_id, user_id ());
+    $lib = targ ('lib');
+  $data = $lib->GetUserSolutions (WT_contest_id(), user_id ());
   $n = count ($data);
 
   $contest = WT_contest_by_id ();

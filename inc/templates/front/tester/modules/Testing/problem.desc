@@ -1,5 +1,5 @@
 <?php
-  global $WT_TESTING_Cache, $WT_contest_id;
+  global $WT_TESTING_Cache;
 
   $assoc_data = targ ('assoc_data');
   $lib = targ ('lib');
