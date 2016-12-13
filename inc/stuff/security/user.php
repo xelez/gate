@@ -17,7 +17,7 @@
     die;
   }
 
-      $user_infos = array ();
+    $user_infos = array ();
 
     function user_delete_unwanted () {
       db_delete ('user', '(`authorized`=0) AND (`timestamp`<='.
@@ -32,15 +32,13 @@
     }
 
     function user_logout () {
-      global $user_login, $user_password;
-      $user_login = $user_password = '';
-      session_unregister ('user_id');
-      session_unregister ('user_login');
-      session_unregister ('user_password');
-      session_unregister ('user_access');
+      unset($_SESSION['user_id']);
+      unset($_SESSION['user_login']);
+      unset($_SESSION['user_password']);
+      unset($_SESSION['user_access']);
 
       // But how we can optimize this?
-      session_unregister ('WT_contest_id');
+      unset($_SESSION['WT_contest_id']);
       hook_call ('CORE.Security.OnUserLogout', $id);
     }
 
@@ -49,15 +47,23 @@
     }
 
     function user_authorized () {
-      global $user_login, $user_password, $user_authorized;
+      global $user_authorized;
 
       if (isset ($user_authorized)) {
         return $user_authorized;
       }
 
+      if (empty($_SESSION['user_login']) || empty($_SESSION['user_password']) ) {
+        $user_authorized = false;
+        return false;
+      }
+
+      $login = $_SESSION['login'];
+      $password = $_SESSION['user_password'];
+
       db_query ('SELECT * FROM `user` WHERE (`authorized`=1) AND (`login`="'.
-                $user_login.'") AND (`password`=MD5("'.
-                addslashes (user_password_hash ($user_login, $user_password)).
+                $login.'") AND (`password`=MD5("'.
+                addslashes (user_password_hash ($login, $password)).
                 '"))');
 
       $user_authorized = db_affected () == 1;
@@ -66,7 +72,8 @@
     }
 
     function user_authorize ($login, $password) {
-      global $user_id, $user_login, $user_password, $user_access;
+      global $user_authorized;
+
       $r = db_row (db_query ('SELECT * FROM `user` WHERE (`authorized`=1) '.
                              'AND (`login`="'.addslashes ($login).'") AND '.
                              '(`password`=MD5("'.
@@ -74,26 +81,24 @@
                              '"))'));
 
       $user_id = $r['id'];
-      session_unregister ('user_id');
-      session_unregister ('user_login');
-      session_unregister ('user_password');
-      session_unregister ('user_access');
-
-      // But how we can optimize this?
-      session_unregister ('WT_contest_id');
+      unset($_SESSION['user_id']);       // +
+      unset($_SESSION['user_login']);    // +
+      unset($_SESSION['user_password']); // cleaned up
+      unset($_SESSION['user_access']);   // +
+      unset($_SESSION['WT_contest_id']); // need to clean up
 
       if ($user_id != '') {
-        $user_login = $login;
-        $user_password = $password;
-        $user_access = $r['access'];
-        session_register ('user_id');
-        session_register ('user_login');
-        session_register ('user_password');
-        session_register ('user_access');
+        $_SESSION['user_id'] = $user_id;
+        $_SESSION['user_login'] = $login;
+        $_SESSION['user_password'] = $password;
+        $_SESSION['user_access'] = $r['access'];
+        $user_authorized = true;
 
         db_update ('user', array ('last_act'=>time ()), '`id`='.$user_id);
+        return true;
       }
-      return $user_id!='';
+
+      return false;
     }
 
     function user_registered_with_field ($field, $value, $skipId = -1) {
@@ -362,31 +367,30 @@
     }
 
     function user_access () {
-      global $user_access;
-
-      if ($user_access == '') {
+      if (empty($_SESSION['user_access'])) {
         return 0;
       }
 
-      return $user_access;
+      return $_SESSION['user_access'];
     }
 
     function user_access_root () {
-      global $user_access;
-      return $user_access >= ACCESS_ROOT;
+      return user_access() >= ACCESS_ROOT;
     }
 
     function user_id () {
-      global $user_id;
-
-      if ($user_id == '') {
+      if (empty($_SESSION['user_id'])) {
         return -1;
       }
 
-      return $user_id;
+      return $_SESSION['user_id'];
     }
 
-    function user_login () { global $user_login; return $user_login; }
+    function user_login () {
+      if (empty($_SESSION['login']))
+        return '';
+      return $_SESSION['login'];
+    }
 
     function user_id_by_login ($login) {
       return db_field_value ('user', 'id', '`login`="'.addslashes ($login).'"');

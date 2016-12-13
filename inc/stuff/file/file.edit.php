@@ -1,5 +1,5 @@
 <?php
-  global $_FILES, $storage, $size, $field, $user_id, $formname, $value;
+  global $_FILES, $storage, $size, $field, $formname, $value;
   include '../../../globals.php';
   require_once $DOCUMENT_ROOT.'/inc/include.php';
   db_connect ();
@@ -29,7 +29,7 @@
     $err=validate_file ($data, $size);
     if ($err=='') {
       $s=manage_spawn_storage ($storage);
-      $fn=$s->Put ($data, $user_id);
+      $fn=$s->Put ($data, user_id());
       $value=$fn;
       $full=$s->GetFullURL ($fn);
       $p=$s->GetFileParams ($value);
@@ -41,10 +41,10 @@
   }
 ?>
   <body id="content" style="background: transparent">
-    <form id="ipc_form" method="POST" action="<?=config_get ('http-document-root');?>/inc/stuff/file/file.edit.php?storage=<?=$storage?>&size=<?=urlencode ($size);?>&field=<?=$field;?>&field=<?=$field;?>&user_id=<?=$user_id;?>&formname=<?=$formname;?>&value=<?=$value?>" enctype="multipart/form-data">
+    <form id="ipc_form" method="POST" action="<?=config_get ('http-document-root');?>/inc/stuff/file/file.edit.php?storage=<?=$storage?>&size=<?=urlencode ($size);?>&field=<?=$field;?>&field=<?=$field;?>&user_id=<?=user_id();?>&formname=<?=$formname;?>&value=<?=$value?>" enctype="multipart/form-data">
       <table class="clear"><tr>
         <td><input type="file" onchange=" onFileChange ();" name="uploading" class="block"></td>
-        <?php if ($value!='' && false) { ?><td><button style="width: 200px;" type="button" class="alert" onclick="nav ('<?=config_get ('http-document-root');?>/inc/stuff/file/file.edit.php?storage=<?=$storage?>&size=<?=urlencode ($size);?>&field=<?=$field;?>&field=<?=$field;?>&user_id=<?=$user_id;?>&formname=<?=$formname;?>&action=delete&value=<?=$value?>');">Удалить с сервера</button></td> <?php } ?>
+        <?php if ($value!='' && false) { ?><td><button style="width: 200px;" type="button" class="alert" onclick="nav ('<?=config_get ('http-document-root');?>/inc/stuff/file/file.edit.php?storage=<?=$storage?>&size=<?=urlencode ($size);?>&field=<?=$field;?>&field=<?=$field;?>&user_id=<?=user_id();?>&formname=<?=$formname;?>&action=delete&value=<?=$value?>');">Удалить с сервера</button></td> <?php } ?>
       </tr></table>
     </form>
   </body>
