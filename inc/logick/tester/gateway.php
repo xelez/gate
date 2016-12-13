@@ -167,15 +167,12 @@
       }
 
       function UpdateCurrentContest () {
-        global $WT_contest_id;
-
         $cnt = $this->SpawnContestContainer ();
         $list = $cnt->GetAccessibleList (user_id ());
-        $this->current_contest = $cnt->ContestById ($WT_contest_id);
-        if (!isset ($WT_contest_id) || !isset ($this->current_contest['id'])) {
-          session_register ('WT_contest_id');
+        $this->current_contest = $cnt->ContestById ();
+        if (!isset($_SESSION['WT_contest_id']) || !isset($this->current_contest['id'])) {
           $this->current_contest = (isset ($list[0]))?($list[0]):(array ());
-          $WT_contest_id = $this->current_contest['id'];
+          $_SESSION['WT_contest_id'] = $this->current_contest['id'];
         }
       }
 
@@ -406,9 +403,8 @@
         $new = $cnt->ContestById ($id);
 
         if (isset ($new['id'])) {
-          global $WT_contest_id;
           $this->current_contest=$new;
-          $WT_contest_id = $new['id'];
+          $_SESSION['WT_contest_id'] = $new['id'];
         }
       }
 

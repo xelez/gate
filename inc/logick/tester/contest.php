@@ -210,10 +210,8 @@
       }
 
       function ContestById ($v = -1) {
-        global $WT_contest_id;
-
-        if ($v < 0) {
-          $v = $WT_contest_id;
+        if ( ($v < 0) && !empty($_SESSION['WT_contest_id']) ) {
+          $v = $_SESSION['WT_contest_id'];
         }
 
         return $this->ContestByField ('id', $v);
