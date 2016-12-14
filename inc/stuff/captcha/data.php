@@ -51,7 +51,6 @@
     }
   }
 
-  session_register ('CAPTCHA_Keystring');
   $_SESSION['CAPTCHA_Keystring'] = $keystring;
 
   // Load random font
