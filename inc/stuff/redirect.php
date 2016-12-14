@@ -26,9 +26,10 @@
       $result = '';
 
       foreach ($_GET as $k => $v) {
-        if ($redirector_skip_vars[$k]['##EMPTY##'] ||
-            $redirector_skip_vars[$k][$v]) {
-          continue;
+        if ( isset($redirector_skip_vars[$k]) ) {
+           $tmp = $redirector_skip_vars[$k];
+           if (!empty($tmp['##EMPTY##']) || !empty($tmp[$v]))
+             continue;
         }
 
         if (strtolower($k) == 'redirect' && !$overwrite) {
