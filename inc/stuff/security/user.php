@@ -58,13 +58,14 @@
         return false;
       }
 
-      $login = $_SESSION['login'];
+      $login = $_SESSION['user_login'];
       $password = $_SESSION['user_password'];
 
       db_query ('SELECT * FROM `user` WHERE (`authorized`=1) AND (`login`="'.
                 $login.'") AND (`password`=MD5("'.
                 addslashes (user_password_hash ($login, $password)).
                 '"))');
+
 
       $user_authorized = db_affected () == 1;
 
@@ -81,11 +82,11 @@
                              '"))'));
 
       $user_id = $r['id'];
-      unset($_SESSION['user_id']);       // +
-      unset($_SESSION['user_login']);    // +
-      unset($_SESSION['user_password']); // cleaned up
-      unset($_SESSION['user_access']);   // +
-      unset($_SESSION['WT_contest_id']); // need to clean up
+      unset($_SESSION['user_id']);
+      unset($_SESSION['user_login']);
+      unset($_SESSION['user_password']);
+      unset($_SESSION['user_access']);
+      unset($_SESSION['WT_contest_id']);
 
       if ($user_id != '') {
         $_SESSION['user_id'] = $user_id;
