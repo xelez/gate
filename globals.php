@@ -14,4 +14,9 @@
 
   $IFACE = 'SPAWNING NEW IFACE';
   $DOCUMENT_ROOT = __DIR__;
+
+  $superglobals = array($_FILES, $_POST, $_GET);
+  foreach ($superglobals as $superglobal) {
+    extract($superglobal, EXTR_SKIP);
+  }
 ?>
