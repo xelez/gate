@@ -32,14 +32,6 @@
       function SpawnDataset () {
         return manage_spawn_dataset ($this->settings['dataset']['id'],
                                      $this->settings['dataset']['settings']);
-
-        if ($this->empty_dataset == NULL) {
-          $this->empty_dataset = manage_spawn_dataset (
-            $this->settings['dataset']['id'],
-            $this->settings['dataset']['settings']);
-        }
-
-        return $this->empty_dataset;
       }
 
       function UpdateScripts () {
@@ -973,6 +965,9 @@
         $data = $this->data [$this->idlink[$id]];
         $redirect = get_redirection ();
 
+        //TODO: not sure if this fix is right
+        content_url_var_push ('wiki', $wiki);
+
         if ($this->IsDated ()) {
           $y = preg_replace ('/([0-9]+)\-([0-9]+)\-([0-9]+)/si',
                              '\1', $data['date']);
@@ -987,8 +982,6 @@
           return $url.'&wiki=edit&action=edit&uid='.$data['uid'].
             '&redirect='.$redirect;
         }
-
-        content_url_var_push ('wiki', $wiki);
       }
 
       function Editor_ManageScripts () {
