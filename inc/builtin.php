@@ -398,4 +398,12 @@
     function crlf2br ($s) {
       return str_replace ("\n", '<br>', str_replace ("\r\n", '<br>', $s));
     }
+
+    function get(&$var, $default=null) {
+      return isset($var) ? $var : $default;
+    }
+
+    function request_get($key) {
+      return get($_REQUEST[$key], '');
+    }
 ?>

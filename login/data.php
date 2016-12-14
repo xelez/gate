@@ -10,7 +10,10 @@
    * See the file COPYING.
    */
 
-  global $login, $passwd, $redirect;
+  $login = request_get('login');
+  $passwd = request_get('passwd');
+  $redirect = request_get('redirect');
+
   $authorized = false;
 
   if (trim ($login) != '') {
