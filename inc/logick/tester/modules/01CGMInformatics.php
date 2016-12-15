@@ -341,7 +341,7 @@
         while ($r = db_row ($q)) {
           $arr = $r;
           $arr['settings'] = unserialize ($r['settings']);
-          $arr['tags'] = $tags[$r['id']];
+          $arr['tags'] = get($tags[$r['id']], null);
           $this->data[] = $arr;
         }
       }
