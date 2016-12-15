@@ -51,8 +51,8 @@
     }
   } else {
     $contests = array ($contest_id => WT_contest_by_id ($contest_id));
-    setContestId (&$sols, $contest_id);
-    setContestId (&$problems, $contest_id);
+    setContestId ($sols, $contest_id);
+    setContestId ($problems, $contest_id);
   }
 
   // Parse solutions
@@ -155,7 +155,7 @@
     }
   }
 
-  function ACM_Monitor_Comparator ($data, $a, $b) {
+  function ACM_Monitor_Comparator (&$data, $a, $b) {
     $r1 = $data[$a['id']];
     $r2 = $data[$b['id']];
 
@@ -178,8 +178,8 @@
   $user_count = count ($users);
   for ($i = 0; $i < $user_count; $i++)
     for ($j = 0; $j < $user_count - 1; $j++) {
-      if (ACM_Monitor_Comparator (&$data, $users[$j], $users[$j + 1]) < 0)
-        swap (&$users[$j], &$users[$j + 1]);
+      if (ACM_Monitor_Comparator ($data, $users[$j], $users[$j + 1]) < 0)
+        swap ($users[$j], $users[$j + 1]);
     }
 
   $contests_titles = count ($contests) > 1;

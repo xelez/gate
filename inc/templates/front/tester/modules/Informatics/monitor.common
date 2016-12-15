@@ -84,7 +84,7 @@
 </script>
 
 <?php
-  function setContestId ($arr, $contest_id) {
+  function setContestId (&$arr, $contest_id) {
     for ($i = 0, $n = count ($arr); $i < $n; ++$i) {
       $arr[$i]['contest_id'] = $contest_id;
     }
