@@ -17,7 +17,7 @@
     die;
   }
 
-    config_set ('proto', (($_SERVER['HTTPS']!='')?('https'):('http')));
+  config_set ('proto', isset($_SERVER['HTTPS']) ? 'https' : 'http');
 
     // Major version of php
     config_set ('php-version', preg_replace ('/^([0-9]).*/', '\1', phpversion ()));
@@ -43,7 +43,7 @@
 
     config_set ('storage-root', '/storage');
     config_set ('storage-digits', 4);
-    config_set ('storage-lifetime', 30*60);
+    config_set ('storage-lifetime', 20*365*24*60*60);
     config_set ('storage-enc', $DOCUMENT_ROOT.'/storage/enc');
     config_set ('http-storage-enc', config_get ('http-document-root').'/storage/enc');
 
@@ -69,10 +69,10 @@
     config_set ('static-privacy-rules', array ('admin'=> array ('/tester/admin.php'=>'ROOT')));
 
     // How long user can live in system without any activity
-    config_set ('user-lifetime', 60*60*24*365);
+    config_set ('user-lifetime', 20*60*60*24*365);
 
     config_set ('restore-timeout', 12*60*60*0);
 
-    config_set ('session-lifetime', 15);
+    config_set ('session-lifetime', 60);
 
 ?>
