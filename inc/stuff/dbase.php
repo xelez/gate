@@ -76,17 +76,19 @@
       global $db_resource, $db_connected;
 
       if (!function_exists ('mysql_connect')) {
+        http_response_code(500);
         print ('PHP not configured for using MySQL');
-        exit ();
+        die ();
       }
 
-      $db_resource = mysql_connect (config_get ('db-host'),
+      $db_resource = @mysql_connect (config_get ('db-host'),
                                     config_get ('db-user'),
                                     config_get ('db-password'));
 
-      if ($db_resource == 0) {
+      if (!$db_resource) {
+        http_response_code(500);
         print ('Could not connect to database');
-        exit ();
+        die ();
       }
 
       db_query ('/*!40101 SET NAMES \''.config_get ('db-codepage').'\' */');
